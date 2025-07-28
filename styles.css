@@ -86,6 +86,7 @@ body {
     border-radius: var(--radius-md);
     transition: all 0.2s ease;
     font-weight: 500;
+    font-size: 0.875rem;
 }
 
 .nav-link:hover {
@@ -231,6 +232,7 @@ body {
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border-color);
     transition: all 0.2s ease;
+    font-size: 0.875rem;
 }
 
 .mobile-nav-link:hover {
