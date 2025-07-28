@@ -3707,3 +3707,410 @@ function mostrarNotificacion(mensaje) {
         notificacion.remove();
     }, 3000);
 }
+
+// ===== MÓDULO DE CUENTAS POR COBRAR =====
+
+// Variables globales para el módulo de facturas
+let facturasData = [
+    {
+        id: 'FAC001',
+        pedidoId: 'P0010',
+        cliente: 'Distribuidora El Sol S.A.',
+        vendedor: 'Juan Pérez',
+        fechaEmision: '2025-01-20',
+        fechaVencimiento: '2025-02-20',
+        montoTotal: 1500.00,
+        saldoPendiente: 1500.00,
+        estado: 'Pendiente',
+        items: [
+            { descripcion: 'Harina Premium 25kg', cantidad: 2, precioUnitario: 500.00, total: 1000.00 },
+            { descripcion: 'Aceite de Oliva Extra Virgen 1L', cantidad: 5, precioUnitario: 100.00, total: 500.00 }
+        ],
+        pagos: []
+    },
+    {
+        id: 'FAC002',
+        pedidoId: 'P0011',
+        cliente: 'Panadería La Espiga',
+        vendedor: 'María López',
+        fechaEmision: '2025-01-22',
+        fechaVencimiento: '2025-02-22',
+        montoTotal: 850.50,
+        saldoPendiente: 425.25,
+        estado: 'Parcialmente Pagada',
+        items: [
+            { descripcion: 'Café Molido Premium 1kg', cantidad: 3, precioUnitario: 150.00, total: 450.00 },
+            { descripcion: 'Azúcar Refinada 5kg', cantidad: 2, precioUnitario: 200.25, total: 400.50 }
+        ],
+        pagos: [
+            { fecha: '2025-01-25', monto: 425.25, metodo: 'Transferencia Bancaria', referencia: 'TRX-2025-001' }
+        ]
+    }
+];
+
+// Función para mostrar la vista de facturas
+function mostrarFacturas() {
+    document.getElementById('facturasContainer').style.display = 'block';
+    document.getElementById('formularioFactura').style.display = 'none';
+    document.getElementById('facturaDetalle').style.display = 'none';
+    actualizarVistaFacturas();
+}
+
+// Función para actualizar la vista de facturas
+function actualizarVistaFacturas() {
+    // Implementar filtros y búsqueda
+    console.log('Vista de facturas actualizada');
+}
+
+// Función para mostrar el formulario de nueva factura
+function mostrarNuevaFactura() {
+    document.getElementById('facturasContainer').style.display = 'none';
+    document.getElementById('formularioFactura').style.display = 'block';
+    document.getElementById('facturaDetalle').style.display = 'none';
+    
+    // Configurar fecha de emisión automática
+    const fechaEmision = document.getElementById('fechaEmision');
+    if (fechaEmision) {
+        fechaEmision.value = new Date().toISOString().split('T')[0];
+    }
+    
+    // Configurar fecha de vencimiento (30 días por defecto)
+    const fechaVencimiento = document.getElementById('fechaVencimiento');
+    if (fechaVencimiento) {
+        const fechaVenc = new Date();
+        fechaVenc.setDate(fechaVenc.getDate() + 30);
+        fechaVencimiento.value = fechaVenc.toISOString().split('T')[0];
+    }
+}
+
+// Función para cancelar el formulario de factura
+function cancelarFormularioFactura() {
+    if (confirm('¿Estás seguro de que quieres cancelar? Los datos no guardados se perderán.')) {
+        mostrarFacturas();
+    }
+}
+
+// Función para buscar pedido
+function buscarPedido() {
+    const pedidoId = document.getElementById('pedidoFactura').value;
+    if (pedidoId) {
+        // Simular búsqueda de pedido
+        const pedidoResumen = document.getElementById('pedidoResumen');
+        if (pedidoResumen) {
+            pedidoResumen.style.display = 'block';
+            document.getElementById('pedidoCliente').textContent = 'Distribuidora El Sol S.A.';
+            document.getElementById('pedidoFecha').textContent = 'Fecha: 2025-01-20';
+            document.getElementById('pedidoTotal').textContent = 'Total: €1,500.00';
+        }
+    }
+}
+
+// Función para agregar ítem a la factura
+function agregarItemFactura() {
+    const descripcion = document.getElementById('productoFactura').value;
+    const cantidad = parseFloat(document.getElementById('cantidadFactura').value);
+    const precioUnitario = parseFloat(document.getElementById('precioUnitario').value);
+    
+    if (descripcion && cantidad && precioUnitario) {
+        const total = cantidad * precioUnitario;
+        
+        // Agregar a la tabla
+        const tbody = document.getElementById('productosFacturaTableBody');
+        if (tbody) {
+            const row = tbody.insertRow();
+            row.innerHTML = `
+                <td>${descripcion}</td>
+                <td>${cantidad}</td>
+                <td>€${precioUnitario.toFixed(2)}</td>
+                <td>€${total.toFixed(2)}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-danger" onclick="eliminarItemFactura(this)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            `;
+        }
+        
+        // Limpiar campos
+        document.getElementById('productoFactura').value = '';
+        document.getElementById('cantidadFactura').value = '1';
+        document.getElementById('precioUnitario').value = '';
+        document.getElementById('totalLinea').value = '';
+        
+        // Actualizar totales
+        actualizarTotalesFactura();
+    }
+}
+
+// Función para eliminar ítem de la factura
+function eliminarItemFactura(button) {
+    button.closest('tr').remove();
+    actualizarTotalesFactura();
+}
+
+// Función para actualizar totales de la factura
+function actualizarTotalesFactura() {
+    const tbody = document.getElementById('productosFacturaTableBody');
+    let subtotal = 0;
+    
+    if (tbody) {
+        const rows = tbody.getElementsByTagName('tr');
+        for (let row of rows) {
+            const totalCell = row.cells[3];
+            const total = parseFloat(totalCell.textContent.replace('€', ''));
+            subtotal += total;
+        }
+    }
+    
+    const iva = subtotal * 0.16;
+    const total = subtotal + iva;
+    
+    document.getElementById('subtotalFactura').textContent = `€${subtotal.toFixed(2)}`;
+    document.getElementById('ivaFactura').textContent = `€${iva.toFixed(2)}`;
+    document.getElementById('totalFactura').textContent = `€${total.toFixed(2)}`;
+}
+
+// Función para guardar borrador de factura
+function guardarBorradorFactura() {
+    alert('Borrador de factura guardado exitosamente');
+}
+
+// Función para ver detalle de factura
+function verDetalleFactura(facturaId) {
+    document.getElementById('facturasContainer').style.display = 'none';
+    document.getElementById('formularioFactura').style.display = 'none';
+    document.getElementById('facturaDetalle').style.display = 'block';
+    
+    // Cargar datos de la factura
+    const factura = facturasData.find(f => f.id === facturaId);
+    if (factura) {
+        document.getElementById('detalleFacturaTitulo').textContent = `Detalle de Factura ${factura.id}`;
+        // Aquí se cargarían todos los datos de la factura en la vista
+    }
+}
+
+// Función para volver a la lista de facturas
+function volverAFacturas() {
+    mostrarFacturas();
+}
+
+// Función para registrar pago de factura
+function registrarPagoFactura(facturaId) {
+    const modal = document.getElementById('modalRegistroPago');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.getElementById('facturaPago').value = facturaId;
+        
+        // Obtener saldo pendiente de la factura
+        const factura = facturasData.find(f => f.id === facturaId);
+        if (factura) {
+            document.getElementById('montoPago').value = factura.saldoPendiente;
+        }
+        
+        // Configurar fecha actual
+        document.getElementById('fechaPago').value = new Date().toISOString().split('T')[0];
+    }
+}
+
+// Función para cerrar modal de pago
+function cerrarModalPago() {
+    const modal = document.getElementById('modalRegistroPago');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Función para confirmar registro de pago
+function confirmarRegistroPago() {
+    const facturaId = document.getElementById('facturaPago').value;
+    const monto = parseFloat(document.getElementById('montoPago').value);
+    const fecha = document.getElementById('fechaPago').value;
+    const metodo = document.getElementById('metodoPago').value;
+    const referencia = document.getElementById('referenciaPago').value;
+    
+    if (facturaId && monto && fecha && metodo) {
+        // Aquí se procesaría el pago
+        alert(`Pago registrado exitosamente:\nFactura: ${facturaId}\nMonto: €${monto.toFixed(2)}\nMétodo: ${metodo}`);
+        cerrarModalPago();
+        mostrarFacturas(); // Actualizar vista
+    } else {
+        alert('Por favor complete todos los campos requeridos');
+    }
+}
+
+// Función para enviar recordatorio
+function enviarRecordatorio(facturaId) {
+    alert(`Recordatorio enviado para la factura ${facturaId}`);
+}
+
+// Función para enviar recordatorio urgente
+function enviarRecordatorioUrgente(facturaId) {
+    alert(`Recordatorio urgente enviado para la factura ${facturaId}`);
+}
+
+// Función para generar nota de crédito
+function generarNotaCredito(facturaId) {
+    if (confirm(`¿Estás seguro de que quieres generar una nota de crédito para la factura ${facturaId}?`)) {
+        alert(`Nota de crédito generada para la factura ${facturaId}`);
+    }
+}
+
+// Función para imprimir factura
+function imprimirFactura(facturaId) {
+    alert(`Imprimiendo factura ${facturaId}...`);
+}
+
+// Función para enviar factura por email
+function enviarFacturaEmail(facturaId) {
+    alert(`Factura ${facturaId} enviada por email`);
+}
+
+// Función para registrar pago desde detalle
+function registrarPagoDesdeDetalle() {
+    const facturaId = document.getElementById('detalleFacturaTitulo').textContent.split(' ').pop();
+    registrarPagoFactura(facturaId);
+}
+
+// Función para enviar factura por email desde detalle
+function enviarFacturaEmail() {
+    const facturaId = document.getElementById('detalleFacturaTitulo').textContent.split(' ').pop();
+    enviarFacturaEmail(facturaId);
+}
+
+// Función para imprimir factura desde detalle
+function imprimirFacturaDesdeDetalle() {
+    const facturaId = document.getElementById('detalleFacturaTitulo').textContent.split(' ').pop();
+    imprimirFactura(facturaId);
+}
+
+// Función para generar nota de crédito desde detalle
+function generarNotaCreditoDesdeDetalle() {
+    const facturaId = document.getElementById('detalleFacturaTitulo').textContent.split(' ').pop();
+    generarNotaCredito(facturaId);
+}
+
+// Función para cancelar factura desde detalle
+function cancelarFacturaDesdeDetalle() {
+    const facturaId = document.getElementById('detalleFacturaTitulo').textContent.split(' ').pop();
+    if (confirm(`¿Estás seguro de que quieres cancelar la factura ${facturaId}? Esta acción no se puede deshacer.`)) {
+        alert(`Factura ${facturaId} cancelada`);
+        volverAFacturas();
+    }
+}
+
+// Función para ver cliente desde detalle
+function verCliente(clienteId) {
+    alert(`Redirigiendo al perfil del cliente ${clienteId}`);
+}
+
+// Función para ver pedido desde detalle
+function verPedido(pedidoId) {
+    alert(`Redirigiendo al detalle del pedido ${pedidoId}`);
+}
+
+// Función para exportar facturas
+function exportarFacturas() {
+    alert('Exportando facturas...');
+}
+
+// Event listeners para el módulo de facturas
+document.addEventListener('DOMContentLoaded', function() {
+    // Botón nueva factura
+    const btnNuevaFactura = document.getElementById('btnNuevaFactura');
+    if (btnNuevaFactura) {
+        btnNuevaFactura.addEventListener('click', mostrarNuevaFactura);
+    }
+    
+    // Botón exportar facturas
+    const btnExportarFacturas = document.getElementById('btnExportarFacturas');
+    if (btnExportarFacturas) {
+        btnExportarFacturas.addEventListener('click', exportarFacturas);
+    }
+    
+    // Búsqueda de facturas
+    const searchFacturas = document.getElementById('searchFacturas');
+    if (searchFacturas) {
+        searchFacturas.addEventListener('input', function() {
+            // Implementar búsqueda en tiempo real
+            console.log('Buscando facturas:', this.value);
+        });
+    }
+    
+    // Filtros de facturas
+    const filterEstadoFactura = document.getElementById('filterEstadoFactura');
+    if (filterEstadoFactura) {
+        filterEstadoFactura.addEventListener('change', function() {
+            // Implementar filtro por estado
+            console.log('Filtrando por estado:', this.value);
+        });
+    }
+    
+    const filterFechaEmision = document.getElementById('filterFechaEmision');
+    if (filterFechaEmision) {
+        filterFechaEmision.addEventListener('change', function() {
+            // Implementar filtro por fecha
+            console.log('Filtrando por fecha:', this.value);
+        });
+    }
+    
+    // Cálculo automático de total de línea
+    const cantidadFactura = document.getElementById('cantidadFactura');
+    const precioUnitario = document.getElementById('precioUnitario');
+    const totalLinea = document.getElementById('totalLinea');
+    
+    if (cantidadFactura && precioUnitario && totalLinea) {
+        function calcularTotalLinea() {
+            const cantidad = parseFloat(cantidadFactura.value) || 0;
+            const precio = parseFloat(precioUnitario.value) || 0;
+            totalLinea.value = (cantidad * precio).toFixed(2);
+        }
+        
+        cantidadFactura.addEventListener('input', calcularTotalLinea);
+        precioUnitario.addEventListener('input', calcularTotalLinea);
+    }
+    
+    // Cambio de método de creación
+    const crearDesdePedido = document.getElementById('crearDesdePedido');
+    const crearManual = document.getElementById('crearManual');
+    const pedidoBusqueda = document.getElementById('pedidoBusqueda');
+    const clienteFactura = document.getElementById('clienteFactura');
+    
+    if (crearDesdePedido && crearManual && pedidoBusqueda && clienteFactura) {
+        crearDesdePedido.addEventListener('change', function() {
+            if (this.checked) {
+                pedidoBusqueda.style.display = 'block';
+                clienteFactura.disabled = true;
+                clienteFactura.value = '';
+            }
+        });
+        
+        crearManual.addEventListener('change', function() {
+            if (this.checked) {
+                pedidoBusqueda.style.display = 'none';
+                clienteFactura.disabled = false;
+            }
+        });
+    }
+});
+
+// Función para manejar la responsividad de facturas
+function toggleVistaFacturas() {
+    const tableContainer = document.getElementById('facturasTableContainer');
+    const mobileContainer = document.getElementById('facturasMobile');
+    
+    if (window.innerWidth <= 768) {
+        if (tableContainer) tableContainer.style.display = 'none';
+        if (mobileContainer) mobileContainer.style.display = 'block';
+    } else {
+        if (tableContainer) tableContainer.style.display = 'block';
+        if (mobileContainer) mobileContainer.style.display = 'none';
+    }
+}
+
+// Event listener para cambio de tamaño de ventana
+window.addEventListener('resize', toggleVistaFacturas);
+
+// Inicializar vista de facturas al cargar
+document.addEventListener('DOMContentLoaded', function() {
+    toggleVistaFacturas();
+});

@@ -6862,3 +6862,529 @@ canvas {
         justify-content: flex-end;
     }
 }
+
+/* ===== MÓDULO DE CUENTAS POR COBRAR ===== */
+
+/* Estilos para la vista de facturas */
+.facturas-container {
+    padding: 1rem;
+}
+
+.factura-id {
+    font-weight: bold;
+    color: #4F46E5;
+}
+
+.saldo-pendiente {
+    font-weight: bold;
+    color: #EF4444;
+}
+
+.saldo-pendiente:empty::before {
+    content: "€0.00";
+    color: #10B981;
+}
+
+/* Estados de factura */
+.status.pending {
+    background-color: #F59E0B;
+    color: white;
+}
+
+.status.partial {
+    background-color: #8B5CF6;
+    color: white;
+}
+
+.status.completed {
+    background-color: #10B981;
+    color: white;
+}
+
+.status.overdue {
+    background-color: #EF4444;
+    color: white;
+}
+
+.status.canceled {
+    background-color: #6B7280;
+    color: white;
+}
+
+/* Vista móvil de facturas */
+.facturas-mobile {
+    display: none;
+}
+
+.factura-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid #4F46E5;
+}
+
+.factura-card[data-factura-id] .status.overdue {
+    border-left-color: #EF4444;
+}
+
+.factura-card[data-factura-id] .status.completed {
+    border-left-color: #10B981;
+}
+
+.factura-card[data-factura-id] .status.partial {
+    border-left-color: #8B5CF6;
+}
+
+.factura-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.factura-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: #4F46E5;
+}
+
+.factura-amount {
+    text-align: right;
+}
+
+.factura-amount .amount {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1F2937;
+}
+
+.factura-amount .pending {
+    display: block;
+    font-size: 0.9rem;
+    color: #EF4444;
+}
+
+.factura-amount .paid {
+    display: block;
+    font-size: 0.9rem;
+    color: #10B981;
+}
+
+.factura-details {
+    margin-bottom: 1rem;
+}
+
+.factura-details p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.factura-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Formulario de nueva factura */
+.formulario-factura {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.creacion-opciones {
+    margin-bottom: 2rem;
+}
+
+.opciones-radio {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.opcion-radio {
+    flex: 1;
+}
+
+.opcion-radio input[type="radio"] {
+    display: none;
+}
+
+.opcion-radio label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.opcion-radio input[type="radio"]:checked + label {
+    border-color: #4F46E5;
+    background-color: #EEF2FF;
+}
+
+.pedido-busqueda {
+    margin-bottom: 2rem;
+}
+
+.pedido-search-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pedido-resumen {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+}
+
+.pedido-info-card {
+    display: flex;
+    gap: 2rem;
+}
+
+.pedido-details h5 {
+    margin: 0 0 0.5rem 0;
+    color: #4F46E5;
+}
+
+.pedido-products h6 {
+    margin: 0 0 0.5rem 0;
+    color: #374151;
+}
+
+.pedido-products ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.pedido-products li {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.factura-info-section {
+    margin-bottom: 2rem;
+}
+
+.productos-factura {
+    margin-bottom: 2rem;
+}
+
+.producto-agregar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+}
+
+.productos-lista {
+    margin-bottom: 1rem;
+}
+
+.factura-totales {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    min-width: 200px;
+}
+
+.total-item.total-final {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Vista de detalle de factura */
+.factura-detalle {
+    padding: 1rem;
+}
+
+.detalle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.detalle-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.factura-estado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.estado-info h3 {
+    margin: 0;
+    color: #4F46E5;
+}
+
+.montos-info {
+    text-align: right;
+}
+
+.monto-item {
+    margin-bottom: 0.5rem;
+}
+
+.monto-item label {
+    font-weight: bold;
+    color: #374151;
+}
+
+.monto-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1F2937;
+}
+
+.factura-totales-detalle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.pagos-container {
+    margin-top: 1rem;
+}
+
+.pago-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.pago-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    flex: 1;
+}
+
+.pago-fecha {
+    font-weight: bold;
+    color: #374151;
+}
+
+.pago-monto {
+    font-weight: bold;
+    color: #10B981;
+}
+
+.pago-metodo {
+    color: #6B7280;
+}
+
+.pago-referencia {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.acciones-adicionales {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+/* Modal de registro de pago */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+.pago-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Responsive design para móvil */
+@media (max-width: 768px) {
+    .facturas-mobile {
+        display: block;
+    }
+    
+    #facturasTableContainer {
+        display: none;
+    }
+    
+    .producto-agregar {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .opciones-radio {
+        flex-direction: column;
+    }
+    
+    .pedido-info-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .factura-estado {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .montos-info {
+        text-align: left;
+    }
+    
+    .pago-info {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .detalle-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .detalle-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .acciones-adicionales {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}
+
+/* Animaciones */
+.factura-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.factura-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.modal {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estados especiales */
+.factura-card.vencida {
+    border-left-color: #EF4444;
+}
+
+.factura-card.urgente {
+    border-left-color: #F59E0B;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}

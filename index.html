@@ -45,7 +45,10 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span>Portal de Cliente</span>
                 </a>
-
+                <a href="#cuentas-cobrar" class="nav-link" data-section="cuentas-cobrar">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Cuentas por Cobrar</span>
+                </a>
                 <a href="#listas-precios" class="nav-link" data-section="listas-precios">
                     <i class="fas fa-tags"></i>
                     <span>Listas de Precios</span>
@@ -131,7 +134,10 @@
                 <i class="fas fa-shopping-cart"></i>
                 <span>Portal de Cliente</span>
             </a>
-
+            <a href="#cuentas-cobrar" class="mobile-nav-link" data-section="cuentas-cobrar">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Cuentas por Cobrar</span>
+            </a>
             <a href="#listas-precios" class="mobile-nav-link" data-section="listas-precios">
                 <i class="fas fa-tags"></i>
                 <span>Listas de Precios</span>
@@ -2712,7 +2718,850 @@
             </div>
         </section>
 
+        <!-- Cuentas por Cobrar Section -->
+        <section id="cuentas-cobrar" class="section">
+            <div class="section-header">
+                <h1>Gestión de Cuentas por Cobrar y Facturación</h1>
+                <div class="section-actions">
+                    <button class="btn btn-primary" id="btnNuevaFactura">
+                        <i class="fas fa-plus"></i>
+                        Nueva Factura
+                    </button>
+                    <button class="btn btn-secondary" id="btnExportarFacturas">
+                        <i class="fas fa-download"></i>
+                        Exportar
+                    </button>
+                </div>
+            </div>
 
+            <!-- Vista Principal de Listado de Facturas -->
+            <div class="facturas-container" id="facturasContainer">
+                <div class="search-filters">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar por No. Factura o Cliente..." id="searchFacturas">
+                    </div>
+                    <div class="filters">
+                        <select class="filter-select" id="filterEstadoFactura">
+                            <option value="">Todos los estados</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Parcialmente Pagada">Parcialmente Pagada</option>
+                            <option value="Pagada">Pagada</option>
+                            <option value="Vencida">Vencida</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                        <select class="filter-select" id="filterFechaEmision">
+                            <option value="">Todas las fechas</option>
+                            <option value="hoy">Hoy</option>
+                            <option value="semana">Esta semana</option>
+                            <option value="mes">Este mes</option>
+                            <option value="vencidas">Vencidas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Vista Web - Tabla -->
+                <div class="table-container" id="facturasTableContainer">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No. Factura</th>
+                                <th>No. Pedido</th>
+                                <th>Cliente</th>
+                                <th>Fecha Emisión</th>
+                                <th>Fecha Vencimiento</th>
+                                <th>Monto Total</th>
+                                <th>Saldo Pendiente</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-factura-id="FAC001">
+                                <td><span class="factura-id">FAC001</span></td>
+                                <td><span class="pedido-id">P0010</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/4F46E5/FFFFFF?text=D" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Distribuidora El Sol S.A.</div>
+                                            <div class="client-company">Juan Pérez</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-20</td>
+                                <td>2025-02-20</td>
+                                <td>€1,500.00</td>
+                                <td class="saldo-pendiente">€1,500.00</td>
+                                <td><span class="status pending">Pendiente</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC001')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Registrar Pago" onclick="registrarPagoFactura('FAC001')">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar Recordatorio" onclick="enviarRecordatorio('FAC001')">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                        <button class="action-btn" title="Generar Nota de Crédito" onclick="generarNotaCredito('FAC001')">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC002">
+                                <td><span class="factura-id">FAC002</span></td>
+                                <td><span class="pedido-id">P0011</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/10B981/FFFFFF?text=P" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Panadería La Espiga</div>
+                                            <div class="client-company">María López</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-22</td>
+                                <td>2025-02-22</td>
+                                <td>€850.50</td>
+                                <td class="saldo-pendiente">€425.25</td>
+                                <td><span class="status partial">Parcialmente Pagada</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC002')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Registrar Pago" onclick="registrarPagoFactura('FAC002')">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar Recordatorio" onclick="enviarRecordatorio('FAC002')">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                        <button class="action-btn" title="Generar Nota de Crédito" onclick="generarNotaCredito('FAC002')">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC003">
+                                <td><span class="factura-id">FAC003</span></td>
+                                <td><span class="pedido-id">P0012</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/F59E0B/FFFFFF?text=F" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Ferretería Central</div>
+                                            <div class="client-company">Carlos Ruiz</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-23</td>
+                                <td>2025-02-23</td>
+                                <td>€2,300.00</td>
+                                <td class="saldo-pendiente">€0.00</td>
+                                <td><span class="status completed">Pagada</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC003')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Imprimir" onclick="imprimirFactura('FAC003')">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar por Email" onclick="enviarFacturaEmail('FAC003')">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC004">
+                                <td><span class="factura-id">FAC004</span></td>
+                                <td><span class="pedido-id">P0013</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/EF4444/FFFFFF?text=S" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Supermercado Mega</div>
+                                            <div class="client-company">Juan Pérez</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-15</td>
+                                <td>2025-02-15</td>
+                                <td>€1,750.00</td>
+                                <td class="saldo-pendiente">€1,750.00</td>
+                                <td><span class="status overdue">Vencida</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC004')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Registrar Pago" onclick="registrarPagoFactura('FAC004')">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar Recordatorio Urgente" onclick="enviarRecordatorioUrgente('FAC004')">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </button>
+                                        <button class="action-btn" title="Generar Nota de Crédito" onclick="generarNotaCredito('FAC004')">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC005">
+                                <td><span class="factura-id">FAC005</span></td>
+                                <td><span class="pedido-id">P0014</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/8B5CF6/FFFFFF?text=R" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Restaurante El Patio</div>
+                                            <div class="client-company">María López</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-25</td>
+                                <td>2025-02-25</td>
+                                <td>€950.00</td>
+                                <td class="saldo-pendiente">€950.00</td>
+                                <td><span class="status pending">Pendiente</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC005')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Registrar Pago" onclick="registrarPagoFactura('FAC005')">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar Recordatorio" onclick="enviarRecordatorio('FAC005')">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                        <button class="action-btn" title="Generar Nota de Crédito" onclick="generarNotaCredito('FAC005')">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC006">
+                                <td><span class="factura-id">FAC006</span></td>
+                                <td><span class="pedido-id">P0015</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/4F46E5/FFFFFF?text=D" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Distribuidora El Sol S.A.</div>
+                                            <div class="client-company">Juan Pérez</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-18</td>
+                                <td>2025-02-18</td>
+                                <td>€3,200.00</td>
+                                <td class="saldo-pendiente">€0.00</td>
+                                <td><span class="status completed">Pagada</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC006')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Imprimir" onclick="imprimirFactura('FAC006')">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar por Email" onclick="enviarFacturaEmail('FAC006')">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC007">
+                                <td><span class="factura-id">FAC007</span></td>
+                                <td><span class="pedido-id">P0016</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/10B981/FFFFFF?text=P" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Panadería La Espiga</div>
+                                            <div class="client-company">María López</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-10</td>
+                                <td>2025-02-10</td>
+                                <td>€1,200.00</td>
+                                <td class="saldo-pendiente">€1,200.00</td>
+                                <td><span class="status overdue">Vencida</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC007')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Registrar Pago" onclick="registrarPagoFactura('FAC007')">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar Recordatorio Urgente" onclick="enviarRecordatorioUrgente('FAC007')">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </button>
+                                        <button class="action-btn" title="Generar Nota de Crédito" onclick="generarNotaCredito('FAC007')">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-factura-id="FAC008">
+                                <td><span class="factura-id">FAC008</span></td>
+                                <td><span class="pedido-id">P0017</span></td>
+                                <td>
+                                    <div class="client-info">
+                                        <img src="https://via.placeholder.com/32x32/F59E0B/FFFFFF?text=F" alt="Cliente">
+                                        <div>
+                                            <div class="client-name">Ferretería Central</div>
+                                            <div class="client-company">Carlos Ruiz</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>2025-01-28</td>
+                                <td>2025-02-28</td>
+                                <td>€1,800.00</td>
+                                <td class="saldo-pendiente">€900.00</td>
+                                <td><span class="status partial">Parcialmente Pagada</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn" title="Ver Detalles" onclick="verDetalleFactura('FAC008')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn" title="Registrar Pago" onclick="registrarPagoFactura('FAC008')">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                        <button class="action-btn" title="Enviar Recordatorio" onclick="enviarRecordatorio('FAC008')">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                        <button class="action-btn" title="Generar Nota de Crédito" onclick="generarNotaCredito('FAC008')">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Vista Móvil - Lista de Tarjetas -->
+                <div class="facturas-mobile" id="facturasMobile" style="display: none;">
+                    <div class="factura-card" data-factura-id="FAC001">
+                        <div class="factura-header">
+                            <div class="factura-info">
+                                <h4>FAC001</h4>
+                                <span class="status pending">Pendiente</span>
+                            </div>
+                            <div class="factura-amount">
+                                <span class="amount">€1,500.00</span>
+                                <span class="pending">Pendiente: €1,500.00</span>
+                            </div>
+                        </div>
+                        <div class="factura-details">
+                            <p><strong>Cliente:</strong> Distribuidora El Sol S.A.</p>
+                            <p><strong>Pedido:</strong> P0010</p>
+                            <p><strong>Emisión:</strong> 2025-01-20</p>
+                            <p><strong>Vencimiento:</strong> 2025-02-20</p>
+                        </div>
+                        <div class="factura-actions">
+                            <button class="btn btn-sm btn-primary" onclick="verDetalleFactura('FAC001')">
+                                <i class="fas fa-eye"></i> Ver
+                            </button>
+                            <button class="btn btn-sm btn-success" onclick="registrarPagoFactura('FAC001')">
+                                <i class="fas fa-credit-card"></i> Pagar
+                            </button>
+                            <button class="btn btn-sm btn-secondary" onclick="enviarRecordatorio('FAC001')">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="factura-card" data-factura-id="FAC002">
+                        <div class="factura-header">
+                            <div class="factura-info">
+                                <h4>FAC002</h4>
+                                <span class="status partial">Parcialmente Pagada</span>
+                            </div>
+                            <div class="factura-amount">
+                                <span class="amount">€850.50</span>
+                                <span class="pending">Pendiente: €425.25</span>
+                            </div>
+                        </div>
+                        <div class="factura-details">
+                            <p><strong>Cliente:</strong> Panadería La Espiga</p>
+                            <p><strong>Pedido:</strong> P0011</p>
+                            <p><strong>Emisión:</strong> 2025-01-22</p>
+                            <p><strong>Vencimiento:</strong> 2025-02-22</p>
+                        </div>
+                        <div class="factura-actions">
+                            <button class="btn btn-sm btn-primary" onclick="verDetalleFactura('FAC002')">
+                                <i class="fas fa-eye"></i> Ver
+                            </button>
+                            <button class="btn btn-sm btn-success" onclick="registrarPagoFactura('FAC002')">
+                                <i class="fas fa-credit-card"></i> Pagar
+                            </button>
+                            <button class="btn btn-sm btn-secondary" onclick="enviarRecordatorio('FAC002')">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="factura-card" data-factura-id="FAC003">
+                        <div class="factura-header">
+                            <div class="factura-info">
+                                <h4>FAC003</h4>
+                                <span class="status completed">Pagada</span>
+                            </div>
+                            <div class="factura-amount">
+                                <span class="amount">€2,300.00</span>
+                                <span class="paid">Pagado: €2,300.00</span>
+                            </div>
+                        </div>
+                        <div class="factura-details">
+                            <p><strong>Cliente:</strong> Ferretería Central</p>
+                            <p><strong>Pedido:</strong> P0012</p>
+                            <p><strong>Emisión:</strong> 2025-01-23</p>
+                            <p><strong>Vencimiento:</strong> 2025-02-23</p>
+                        </div>
+                        <div class="factura-actions">
+                            <button class="btn btn-sm btn-primary" onclick="verDetalleFactura('FAC003')">
+                                <i class="fas fa-eye"></i> Ver
+                            </button>
+                            <button class="btn btn-sm btn-secondary" onclick="imprimirFactura('FAC003')">
+                                <i class="fas fa-print"></i> Imprimir
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="factura-card" data-factura-id="FAC004">
+                        <div class="factura-header">
+                            <div class="factura-info">
+                                <h4>FAC004</h4>
+                                <span class="status overdue">Vencida</span>
+                            </div>
+                            <div class="factura-amount">
+                                <span class="amount">€1,750.00</span>
+                                <span class="pending">Pendiente: €1,750.00</span>
+                            </div>
+                        </div>
+                        <div class="factura-details">
+                            <p><strong>Cliente:</strong> Supermercado Mega</p>
+                            <p><strong>Pedido:</strong> P0013</p>
+                            <p><strong>Emisión:</strong> 2025-01-15</p>
+                            <p><strong>Vencimiento:</strong> 2025-02-15</p>
+                        </div>
+                        <div class="factura-actions">
+                            <button class="btn btn-sm btn-primary" onclick="verDetalleFactura('FAC004')">
+                                <i class="fas fa-eye"></i> Ver
+                            </button>
+                            <button class="btn btn-sm btn-success" onclick="registrarPagoFactura('FAC004')">
+                                <i class="fas fa-credit-card"></i> Pagar
+                            </button>
+                            <button class="btn btn-sm btn-warning" onclick="enviarRecordatorioUrgente('FAC004')">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Nueva Factura (Oculto por defecto) -->
+            <div class="formulario-factura" id="formularioFactura" style="display: none;">
+                <div class="formulario-header">
+                    <button class="btn btn-secondary" onclick="cancelarFormularioFactura()">
+                        <i class="fas fa-times"></i>
+                        Cancelar
+                    </button>
+                    <h2 id="formularioFacturaTitulo">Nueva Factura</h2>
+                </div>
+
+                <form class="factura-form" id="facturaForm">
+                    <!-- Opciones de Creación -->
+                    <div class="creacion-opciones">
+                        <h3>Método de Creación</h3>
+                        <div class="opciones-radio">
+                            <div class="opcion-radio">
+                                <input type="radio" id="crearDesdePedido" name="metodoCreacion" value="pedido" checked>
+                                <label for="crearDesdePedido">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Generar desde Pedido Existente</span>
+                                </label>
+                            </div>
+                            <div class="opcion-radio">
+                                <input type="radio" id="crearManual" name="metodoCreacion" value="manual">
+                                <label for="crearManual">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Crear Factura Manualmente</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Búsqueda de Pedido -->
+                    <div class="pedido-busqueda" id="pedidoBusqueda">
+                        <div class="form-group">
+                            <label for="pedidoFactura">Buscar Pedido</label>
+                            <div class="pedido-search-container">
+                                <input type="text" id="pedidoFactura" name="pedidoFactura" placeholder="Ingrese No. de Pedido...">
+                                <button type="button" class="btn btn-secondary" onclick="buscarPedido()">
+                                    <i class="fas fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="pedido-resumen" id="pedidoResumen" style="display: none;">
+                            <h4>Resumen del Pedido</h4>
+                            <div class="pedido-info-card">
+                                <div class="pedido-details">
+                                    <h5 id="pedidoCliente">Cliente del Pedido</h5>
+                                    <p id="pedidoFecha">Fecha: 2025-01-20</p>
+                                    <p id="pedidoTotal">Total: €1,500.00</p>
+                                </div>
+                                <div class="pedido-products">
+                                    <h6>Productos:</h6>
+                                    <ul id="pedidoProductos">
+                                        <li>Producto A - 2 unidades - €750.00</li>
+                                        <li>Producto B - 1 unidad - €750.00</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Información de Factura -->
+                    <div class="factura-info-section">
+                        <h3>Información de Factura</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="clienteFactura">Cliente *</label>
+                                <div class="cliente-search-container">
+                                    <input type="text" id="clienteFactura" name="clienteFactura" placeholder="Buscar cliente..." required>
+                                    <div class="cliente-suggestions" id="clienteFacturaSuggestions" style="display: none;">
+                                        <!-- Las sugerencias se cargarán dinámicamente -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fechaEmision">Fecha de Emisión</label>
+                                <input type="date" id="fechaEmision" name="fechaEmision" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                                <input type="date" id="fechaVencimiento" name="fechaVencimiento" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="condicionesPago">Condiciones de Pago</label>
+                                <select id="condicionesPago" name="condicionesPago">
+                                    <option value="Contado">Contado</option>
+                                    <option value="Crédito 15 días">Crédito 15 días</option>
+                                    <option value="Crédito 30 días" selected>Crédito 30 días</option>
+                                    <option value="Crédito 60 días">Crédito 60 días</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Productos/Servicios -->
+                    <div class="productos-factura">
+                        <h3>Productos/Servicios Facturados</h3>
+                        <div class="producto-agregar">
+                            <div class="form-group">
+                                <label for="productoFactura">Producto/Servicio</label>
+                                <input type="text" id="productoFactura" name="productoFactura" placeholder="Descripción del producto o servicio">
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadFactura">Cantidad</label>
+                                <input type="number" id="cantidadFactura" name="cantidadFactura" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="precioUnitario">Precio Unitario</label>
+                                <input type="number" id="precioUnitario" name="precioUnitario" min="0" step="0.01" placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="totalLinea">Total Línea</label>
+                                <input type="number" id="totalLinea" name="totalLinea" min="0" step="0.01" readonly>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="agregarItemFactura()">
+                                <i class="fas fa-plus"></i> Agregar
+                            </button>
+                        </div>
+                        
+                        <div class="productos-lista">
+                            <table class="data-table" id="productosFacturaTable">
+                                <thead>
+                                    <tr>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio Unitario</th>
+                                        <th>Total</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productosFacturaTableBody">
+                                    <!-- Los productos se agregarán dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="factura-totales">
+                            <div class="total-item">
+                                <span>Subtotal:</span>
+                                <span id="subtotalFactura">€0.00</span>
+                            </div>
+                            <div class="total-item">
+                                <span>IVA (16%):</span>
+                                <span id="ivaFactura">€0.00</span>
+                            </div>
+                            <div class="total-item total-final">
+                                <span>Total:</span>
+                                <span id="totalFactura">€0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notas y Observaciones -->
+                    <div class="form-group full-width">
+                        <label for="notasFactura">Notas/Observaciones</label>
+                        <textarea id="notasFactura" name="notasFactura" rows="3" placeholder="Información adicional sobre la factura..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="cancelarFormularioFactura()">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="guardarBorradorFactura()">
+                            <i class="fas fa-save"></i>
+                            Guardar Borrador
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-check"></i>
+                            Emitir Factura
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Vista de Detalle de Factura (Oculta por defecto) -->
+            <div class="factura-detalle" id="facturaDetalle" style="display: none;">
+                <div class="detalle-header">
+                    <button class="btn btn-secondary" onclick="volverAFacturas()">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver a Facturas
+                    </button>
+                    <h2 id="detalleFacturaTitulo">Detalle de Factura FAC001</h2>
+                    <div class="detalle-actions">
+                        <button class="btn btn-primary" onclick="registrarPagoDesdeDetalle()">
+                            <i class="fas fa-credit-card"></i>
+                            Registrar Pago
+                        </button>
+                        <button class="btn btn-secondary" onclick="enviarFacturaEmail()">
+                            <i class="fas fa-envelope"></i>
+                            Enviar por Email
+                        </button>
+                        <button class="btn btn-secondary" onclick="imprimirFacturaDesdeDetalle()">
+                            <i class="fas fa-print"></i>
+                            Imprimir
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detalle-content">
+                    <!-- Sección 1: Encabezado y Estado -->
+                    <div class="detalle-section">
+                        <div class="factura-estado">
+                            <div class="estado-info">
+                                <h3>FAC001</h3>
+                                <span class="status pending">Pendiente</span>
+                            </div>
+                            <div class="montos-info">
+                                <div class="monto-item">
+                                    <label>Monto Total:</label>
+                                    <span class="monto-total">€1,500.00</span>
+                                </div>
+                                <div class="monto-item">
+                                    <label>Saldo Pendiente:</label>
+                                    <span class="saldo-pendiente">€1,500.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 2: Información General -->
+                    <div class="detalle-section">
+                        <h3>Información General</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Cliente:</label>
+                                <span><a href="#" onclick="verCliente('C001')">Distribuidora El Sol S.A.</a></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Fecha de Emisión:</label>
+                                <span>2025-01-20</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Fecha de Vencimiento:</label>
+                                <span>2025-02-20</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Condiciones de Pago:</label>
+                                <span>Crédito 30 días</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Pedido Relacionado:</label>
+                                <span><a href="#" onclick="verPedido('P0010')">P0010</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 3: Ítems Facturados -->
+                    <div class="detalle-section">
+                        <h3>Ítems Facturados</h3>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio Unitario</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Harina Premium 25kg</td>
+                                        <td>2</td>
+                                        <td>€500.00</td>
+                                        <td>€1,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aceite de Oliva Extra Virgen 1L</td>
+                                        <td>5</td>
+                                        <td>€100.00</td>
+                                        <td>€500.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="factura-totales-detalle">
+                            <div class="total-item">
+                                <span>Subtotal:</span>
+                                <span>€1,500.00</span>
+                            </div>
+                            <div class="total-item">
+                                <span>IVA (16%):</span>
+                                <span>€240.00</span>
+                            </div>
+                            <div class="total-item total-final">
+                                <span>Total:</span>
+                                <span>€1,740.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 4: Historial de Pagos -->
+                    <div class="detalle-section">
+                        <h3>Historial de Pagos</h3>
+                        <div class="pagos-container">
+                            <div class="pago-item">
+                                <div class="pago-info">
+                                    <div class="pago-fecha">2025-01-25</div>
+                                    <div class="pago-monto">€500.00</div>
+                                    <div class="pago-metodo">Transferencia Bancaria</div>
+                                    <div class="pago-referencia">Ref: TRX-2025-001</div>
+                                </div>
+                                <div class="pago-actions">
+                                    <button class="btn btn-sm btn-secondary" title="Ver Comprobante">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 5: Acciones Adicionales -->
+                    <div class="detalle-section">
+                        <div class="acciones-adicionales">
+                            <button class="btn btn-warning" onclick="generarNotaCreditoDesdeDetalle()">
+                                <i class="fas fa-undo"></i>
+                                Generar Nota de Crédito
+                            </button>
+                            <button class="btn btn-danger" onclick="cancelarFacturaDesdeDetalle()">
+                                <i class="fas fa-times"></i>
+                                Cancelar Factura
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Registro de Pago -->
+            <div class="modal" id="modalRegistroPago" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Registrar Pago</h3>
+                        <button class="btn btn-icon" onclick="cerrarModalPago()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="pago-form" id="pagoForm">
+                            <div class="form-group">
+                                <label for="facturaPago">Factura</label>
+                                <input type="text" id="facturaPago" name="facturaPago" readonly>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="montoPago">Monto a Pagar</label>
+                                <input type="number" id="montoPago" name="montoPago" min="0" step="0.01" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fechaPago">Fecha de Pago</label>
+                                <input type="date" id="fechaPago" name="fechaPago" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="metodoPago">Método de Pago</label>
+                                <select id="metodoPago" name="metodoPago" required>
+                                    <option value="">Seleccionar método</option>
+                                    <option value="transferencia">Transferencia Bancaria</option>
+                                    <option value="efectivo">Depósito en Efectivo</option>
+                                    <option value="stripe">Stripe (Tarjeta)</option>
+                                    <option value="tpvclip">TPV Clip</option>
+                                    <option value="cheque">Cheque</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="referenciaPago">Referencia de Pago</label>
+                                <input type="text" id="referenciaPago" name="referenciaPago" placeholder="No. de Transferencia, ID de Transacción, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="notasPago">Notas Internas</label>
+                                <textarea id="notasPago" name="notasPago" rows="2" placeholder="Información adicional sobre el pago..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="cerrarModalPago()">
+                            Cancelar
+                        </button>
+                        <button class="btn btn-primary" onclick="confirmarRegistroPago()">
+                            <i class="fas fa-check"></i>
+                            Registrar Pago
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Listas de Precios Section -->
         <section id="listas-precios" class="section">
