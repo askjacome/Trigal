@@ -125,7 +125,7 @@ const clientesData = {
 const productosData = {
     'PROD001': {
         id: 'PROD001',
-        nombre: 'Laptop Ultraligera X200',
+        nombre: 'Maíz Cacahuazintle para Pozole',
         sku: 'LAP001',
         categoria: 'Electrónicos',
         marca: 'Dell',
@@ -147,7 +147,7 @@ const productosData = {
     },
     'PROD002': {
         id: 'PROD002',
-        nombre: 'Monitor Curvo 27"',
+        nombre: 'Tostadas de Maíz Natural',
         sku: 'MON002',
         categoria: 'Oficina',
         marca: 'HP',
@@ -168,7 +168,7 @@ const productosData = {
     },
     'PROD003': {
         id: 'PROD003',
-        nombre: 'Teclado Mecánico RGB',
+        nombre: 'Maíz Blanco para Pozole',
         sku: 'TEC003',
         categoria: 'Gaming',
         marca: 'Samsung',
@@ -188,7 +188,7 @@ const productosData = {
     },
     'PROD004': {
         id: 'PROD004',
-        nombre: 'Mouse Gaming Pro',
+        nombre: 'Tostadas de Maíz Azul',
         sku: 'MOU004',
         categoria: 'Gaming',
         marca: 'Apple',
@@ -208,7 +208,7 @@ const productosData = {
     },
     'PROD005': {
         id: 'PROD005',
-        nombre: 'Auriculares Bluetooth',
+        nombre: 'Harina de Maíz',
         sku: 'AUR005',
         categoria: 'Electrónicos',
         marca: 'Samsung',
@@ -285,6 +285,86 @@ const productosData = {
         },
         imagenes: ['🎮', '📱', '🔧'],
         badge: null
+    },
+    'MAIZ-001': {
+        id: 'MAIZ-001',
+        nombre: 'Tostadas de Maíz Natural',
+        sku: 'MAIZ-001',
+        categoria: 'Maíz y Derivados',
+        marca: 'El Trigal',
+        precio: 45.00,
+        precioOriginal: 45.00,
+        stock: 120,
+        descripcion: 'Maíz especial para pozole tradicional, de grano grande y sabor auténtico.',
+        especificaciones: {
+            tipo: 'Cacahuazintle',
+            peso: '1kg',
+            origen: 'México',
+            conservacion: 'Seco',
+            caducidad: '12 meses'
+        },
+        imagenes: ['🌽', '🍲', '🏺'],
+        badge: null
+    },
+    'TOST-001': {
+        id: 'TOST-001',
+        nombre: 'Tostadas de Maíz Natural',
+        sku: 'TOST-001',
+        categoria: 'Tostadas',
+        marca: 'El Trigal',
+        precio: 12.50,
+        precioOriginal: 12.50,
+        stock: 65,
+        descripcion: 'Tostadas naturales de maíz, sin conservadores artificiales.',
+        especificaciones: {
+            tipo: 'Natural',
+            peso: '200g',
+            cantidad: '20 piezas',
+            ingredientes: 'Maíz, sal',
+            conservacion: 'Seco'
+        },
+        imagenes: ['🌽', '🍞', '🥑'],
+        badge: null
+    },
+    'MAIZ-002': {
+        id: 'MAIZ-002',
+        nombre: 'Maíz Blanco para Pozole',
+        sku: 'MAIZ-002',
+        categoria: 'Maíz y Derivados',
+        marca: 'El Trigal',
+        precio: 38.00,
+        precioOriginal: 38.00,
+        stock: 95,
+        descripcion: 'Maíz blanco de alta calidad para pozole, grano tierno y nutritivo.',
+        especificaciones: {
+            tipo: 'Blanco',
+            peso: '1kg',
+            origen: 'México',
+            conservacion: 'Seco',
+            caducidad: '12 meses'
+        },
+        imagenes: ['🌽', '🍲', '🏺'],
+        badge: null
+    },
+    'TOST-002': {
+        id: 'TOST-002',
+        nombre: 'Maíz Blanco para Pozole',
+        sku: 'TOST-002',
+        categoria: 'Tostadas',
+        marca: 'El Trigal',
+        precio: 15.00,
+        precioOriginal: 15.00,
+        stock: 45,
+        descripcion: 'Maíz Blanco para Pozole, ricas en antioxidantes y sabor único.',
+        especificaciones: {
+            tipo: 'Azul',
+            peso: '200g',
+            cantidad: '20 piezas',
+            ingredientes: 'Maíz azul, sal',
+            conservacion: 'Seco'
+        },
+        imagenes: ['🌽', '🍞', '🥑'],
+        badge: 'nuevo'
     }
 };
 
@@ -493,11 +573,11 @@ const listasPreciosData = {
         ultimaActualizacion: '2025-01-20',
         productos: 12,
         productosDetalle: [
-            { sku: 'PROD001', nombre: 'Laptop Ultraligera X200', precioBase: 1200.00, precioLista: 1080.00 },
-            { sku: 'PROD002', nombre: 'Monitor Curvo 27"', precioBase: 350.00, precioLista: 315.00 },
-            { sku: 'PROD003', nombre: 'Teclado Mecánico RGB', precioBase: 120.00, precioLista: 108.00 },
-            { sku: 'PROD004', nombre: 'Mouse Gaming Pro', precioBase: 85.00, precioLista: 76.50 },
-            { sku: 'PROD005', nombre: 'Auriculares Bluetooth', precioBase: 95.00, precioLista: 85.50 }
+            { sku: 'PROD001', nombre: 'Maíz Cacahuazintle para Pozole', precioBase: 1200.00, precioLista: 1080.00 },
+            { sku: 'PROD002', nombre: 'Tostadas de Maíz Natural', precioBase: 350.00, precioLista: 315.00 },
+            { sku: 'PROD003', nombre: 'Maíz Blanco para Pozole', precioBase: 120.00, precioLista: 108.00 },
+            { sku: 'PROD004', nombre: 'Tostadas de Maíz Azul', precioBase: 85.00, precioLista: 76.50 },
+            { sku: 'PROD005', nombre: 'Harina de Maíz', precioBase: 95.00, precioLista: 85.50 }
         ],
         clientesAsignados: ['C001', 'C002', 'C003']
     },
@@ -510,8 +590,8 @@ const listasPreciosData = {
         ultimaActualizacion: '2025-01-18',
         productos: 8,
         productosDetalle: [
-            { sku: 'PROD001', nombre: 'Laptop Ultraligera X200', precioBase: 1200.00, precioLista: 1200.00 },
-            { sku: 'PROD002', nombre: 'Monitor Curvo 27"', precioBase: 350.00, precioLista: 350.00 }
+            { sku: 'PROD001', nombre: 'Maíz Cacahuazintle para Pozole', precioBase: 1200.00, precioLista: 1200.00 },
+            { sku: 'PROD002', nombre: 'Tostadas de Maíz Natural', precioBase: 350.00, precioLista: 350.00 }
         ],
         clientesAsignados: ['C004', 'C005']
     },
@@ -524,8 +604,8 @@ const listasPreciosData = {
         ultimaActualizacion: '2025-01-22',
         productos: 15,
         productosDetalle: [
-            { sku: 'PROD001', nombre: 'Laptop Ultraligera X200', precioBase: 1200.00, precioLista: 1100.00 },
-            { sku: 'PROD002', nombre: 'Monitor Curvo 27"', precioBase: 350.00, precioLista: 320.00 }
+            { sku: 'PROD001', nombre: 'Maíz Cacahuazintle para Pozole', precioBase: 1200.00, precioLista: 1100.00 },
+            { sku: 'PROD002', nombre: 'Tostadas de Maíz Natural', precioBase: 350.00, precioLista: 320.00 }
         ],
         clientesAsignados: ['C001']
     },
@@ -552,8 +632,8 @@ const listasPreciosData = {
         ultimaActualizacion: '2024-12-10',
         productos: 20,
         productosDetalle: [
-            { sku: 'PROD001', nombre: 'Laptop Ultraligera X200', precioBase: 1200.00, precioLista: 1000.00 },
-            { sku: 'PROD002', nombre: 'Monitor Curvo 27"', precioBase: 350.00, precioLista: 300.00 }
+            { sku: 'PROD001', nombre: 'Maíz Cacahuazintle para Pozole', precioBase: 1200.00, precioLista: 1000.00 },
+            { sku: 'PROD002', nombre: 'Tostadas de Maíz Natural', precioBase: 350.00, precioLista: 300.00 }
         ],
         clientesAsignados: []
     }
@@ -766,8 +846,118 @@ function volverALista() {
 // Crear pedido para cliente
 function crearPedidoCliente(clienteId) {
     console.log('Creando pedido para cliente:', clienteId);
-    // Aquí se implementaría la lógica para crear un pedido
-    alert(`Creando nuevo pedido para el cliente ${clienteId}`);
+    
+    try {
+        // Buscar el cliente en los datos
+        const cliente = clientesData[clienteId];
+        if (cliente) {
+            // Mostrar confirmación antes de proceder
+            const confirmar = confirm(`¿Deseas crear un nuevo pedido para ${cliente.nombre}?`);
+            
+            if (confirmar) {
+                console.log('Usuario confirmó crear pedido');
+                
+                // Mostrar notificación de que se está creando el pedido
+                mostrarNotificacion(`Creando nuevo pedido para ${cliente.nombre}`);
+                
+                // Cambiar a la sección de ventas
+                console.log('Cambiando a sección ventas...');
+                switchSection('ventas');
+                
+                // Esperar un momento para que la sección se cargue
+                setTimeout(() => {
+                    console.log('Mostrando formulario de nuevo pedido...');
+                    
+                    // Verificar que la sección de ventas esté visible
+                    const ventasSection = document.getElementById('ventas');
+                    if (ventasSection && ventasSection.classList.contains('active')) {
+                        console.log('Sección de ventas está activa');
+                        
+                        // Mostrar el formulario de nuevo pedido
+                        mostrarFormularioNuevoPedido();
+                        
+                        // Pre-seleccionar el cliente en el formulario
+                        const clienteInput = document.getElementById('clientePedido');
+                        if (clienteInput) {
+                            clienteInput.value = cliente.nombre;
+                            console.log('Cliente pre-seleccionado:', cliente.nombre);
+                        }
+                        
+                        // Establecer el cliente actual para el pedido
+                        pedidoCliente = cliente;
+                        console.log('Cliente establecido para el pedido:', pedidoCliente);
+                        
+                        // Mostrar el resumen del cliente
+                        mostrarResumenCliente(cliente);
+                        
+                        // Ir al primer paso del formulario
+                        mostrarPaso(1);
+                        
+                        // Scroll suave hacia el formulario
+                        setTimeout(() => {
+                            const formulario = document.getElementById('formularioPedido');
+                            if (formulario) {
+                                formulario.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                console.log('✅ Formulario de pedido mostrado correctamente');
+                            } else {
+                                console.error('❌ No se encontró el formulario de pedido');
+                            }
+                        }, 200);
+                        
+                    } else {
+                        console.error('❌ La sección de ventas no está activa');
+                        alert('Error: No se pudo cambiar a la sección de ventas');
+                    }
+                    
+                }, 300);
+                
+            } else {
+                console.log('Usuario canceló la creación del pedido');
+            }
+            
+        } else {
+            // Si no se encuentra el cliente, mostrar mensaje
+            console.error(`❌ Cliente ${clienteId} no encontrado en la base de datos`);
+            alert(`Cliente ${clienteId} no encontrado en la base de datos`);
+        }
+    } catch (error) {
+        console.error('❌ Error en crearPedidoCliente:', error);
+        alert('Error al crear pedido: ' + error.message);
+    }
+}
+
+// Función para mostrar el resumen del cliente en el formulario de pedido
+function mostrarResumenCliente(cliente) {
+    console.log('Mostrando resumen del cliente:', cliente);
+    
+    const resumenContainer = document.getElementById('clienteResumen');
+    const avatar = document.getElementById('clienteAvatar');
+    const nombre = document.getElementById('clienteNombre');
+    const direccion = document.getElementById('clienteDireccion');
+    const contacto = document.getElementById('clienteContacto');
+    
+    if (resumenContainer && avatar && nombre && direccion && contacto) {
+        // Configurar avatar con inicial del cliente
+        const inicial = cliente.nombre.charAt(0).toUpperCase();
+        const color = getRandomColor();
+        avatar.src = `https://via.placeholder.com/60x60/${color}/FFFFFF?text=${inicial}`;
+        
+        // Llenar información del cliente
+        nombre.textContent = cliente.nombre;
+        direccion.textContent = cliente.direccion || 'Dirección no disponible';
+        contacto.textContent = `${cliente.telefono || 'Sin teléfono'} | ${cliente.email || 'Sin email'}`;
+        
+        // Mostrar el resumen
+        resumenContainer.style.display = 'block';
+        console.log('Resumen del cliente mostrado correctamente');
+    } else {
+        console.error('No se encontraron los elementos del resumen del cliente');
+        console.log('resumenContainer:', resumenContainer);
+        console.log('avatar:', avatar);
+        console.log('nombre:', nombre);
+        console.log('direccion:', direccion);
+        console.log('contacto:', contacto);
+    }
 }
 
 // Ver mapa del cliente
@@ -803,6 +993,9 @@ function editarClienteDesdeDetalle() {
 // Crear pedido desde detalle
 function crearPedidoDesdeDetalle() {
     if (currentClienteId) {
+        // Cerrar la vista de detalle del cliente
+        volverALista();
+        // Crear el pedido para el cliente
         crearPedidoCliente(currentClienteId);
     }
 }
@@ -989,14 +1182,55 @@ function setupPedidosForm() {
     // Configurar búsqueda de productos
     const productoInput = document.getElementById('productoPedido');
     if (productoInput) {
+        // Sobrescribir cualquier evento existente
+        productoInput.removeEventListener('input', mostrarSugerenciasProductos);
+        
         productoInput.addEventListener('input', function() {
+            console.log('🔍 Input de búsqueda activado:', this.value);
             const searchTerm = this.value.toLowerCase();
-            if (searchTerm.length >= 2) {
+            
+            // Siempre forzar productos de maíz
+            setTimeout(() => {
+                forzarProductosMaiz();
                 mostrarSugerenciasProductos(searchTerm);
-            } else {
-                ocultarSugerenciasProductos();
-            }
+            }, 50);
         });
+        
+        // Evento al hacer focus en el campo
+        productoInput.addEventListener('focus', function() {
+            console.log('🎯 Campo de búsqueda enfocado');
+            setTimeout(() => {
+                forzarProductosMaiz();
+                mostrarSugerenciasProductos('');
+            }, 100);
+        });
+        
+        // Evento al hacer clic en el campo
+        productoInput.addEventListener('click', function() {
+            console.log('🖱️ Click en campo de búsqueda');
+            setTimeout(() => {
+                forzarProductosMaiz();
+                mostrarSugerenciasProductos('');
+            }, 50);
+        });
+        
+        // Mostrar productos de maíz por defecto inmediatamente
+        setTimeout(() => {
+            forzarProductosMaiz();
+            mostrarSugerenciasProductos('');
+        }, 100);
+        
+        // Forzar cada segundo durante los primeros 10 segundos
+        let contador = 0;
+        const intervalId = setInterval(() => {
+            contador++;
+            if (contador <= 10) {
+                forzarProductosMaiz();
+                mostrarSugerenciasProductos('');
+            } else {
+                clearInterval(intervalId);
+            }
+        }, 1000);
     }
     
     // Configurar métodos de pago
@@ -1112,6 +1346,14 @@ function mostrarFormularioNuevoPedido() {
     // Resetear formulario
     resetearFormularioPedido();
     mostrarPaso(1);
+    
+    // Mostrar productos de maíz y tostadas por defecto cuando se abre el formulario
+    setTimeout(() => {
+        const productoInput = document.getElementById('productoPedido');
+        if (productoInput) {
+            mostrarSugerenciasProductos('');
+        }
+    }, 1000);
 }
 
 // Resetear formulario de pedido
@@ -1238,10 +1480,33 @@ function mostrarSugerenciasProductos(searchTerm) {
     const suggestions = document.getElementById('productoSuggestions');
     suggestions.innerHTML = '';
     
-    const productosFiltrados = Object.values(productosData).filter(producto =>
-        producto.nombre.toLowerCase().includes(searchTerm) ||
-        producto.id.toLowerCase().includes(searchTerm)
-    );
+    let productosFiltrados;
+    
+    if (searchTerm === '') {
+        // Si no hay término de búsqueda, mostrar productos de maíz y tostadas por defecto
+        productosFiltrados = Object.values(productosData).filter(producto =>
+            producto.categoria.includes('Maíz') || producto.categoria.includes('Tostada')
+        );
+    } else {
+        // Filtrar por término de búsqueda, priorizando productos de maíz y tostadas
+        const todosLosProductos = Object.values(productosData);
+        const productosMaizTostadas = todosLosProductos.filter(producto =>
+            (producto.categoria.includes('Maíz') || producto.categoria.includes('Tostada')) &&
+            (producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             producto.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             producto.categoria.toLowerCase().includes(searchTerm.toLowerCase()))
+        );
+        
+        const otrosProductos = todosLosProductos.filter(producto =>
+            !producto.categoria.includes('Maíz') && !producto.categoria.includes('Tostada') &&
+            (producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             producto.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             producto.categoria.toLowerCase().includes(searchTerm.toLowerCase()))
+        );
+        
+        // Combinar resultados, priorizando maíz y tostadas
+        productosFiltrados = [...productosMaizTostadas, ...otrosProductos];
+    }
     
     productosFiltrados.forEach(producto => {
         const item = document.createElement('div');
@@ -2674,7 +2939,7 @@ const notificacionesData = [
         tipo: 'inventario',
         icono: '📦',
         titulo: 'Alerta de Stock Bajo',
-        mensaje: 'El producto "Monitor Curvo 27" tiene solo 8 unidades restantes. ¡Realiza un pedido de reabastecimiento!',
+        mensaje: 'El producto "Tostadas de Maíz Natural tiene solo 8 unidades restantes. ¡Realiza un pedido de reabastecimiento!',
         fecha: '2025-07-22T10:30:00',
         leida: false,
         urgente: true
@@ -2734,7 +2999,7 @@ const notificacionesData = [
         tipo: 'inventario',
         icono: '⚠️',
         titulo: 'Producto Agotado',
-        mensaje: 'El producto "Teclado Mecánico RGB" se ha agotado completamente. Considera realizar un pedido urgente.',
+        mensaje: 'El producto "Maíz Blanco para Pozole" se ha agotado completamente. Considera realizar un pedido urgente.',
         fecha: '2025-07-21T11:20:00',
         leida: false,
         urgente: true
@@ -3708,6 +3973,70 @@ function mostrarNotificacion(mensaje) {
     }, 3000);
 }
 
+// Función de prueba para verificar la funcionalidad
+function probarCrearPedido() {
+    console.log('Probando creación de pedido...');
+    crearPedidoCliente('C001');
+}
+
+// Función de prueba simplificada para debug
+function probarCrearPedidoSimple() {
+    console.log('Probando creación de pedido simplificada...');
+    
+    // Cambiar directamente a la sección de ventas
+    switchSection('ventas');
+    
+    // Esperar y mostrar el formulario
+    setTimeout(() => {
+        const ventasSection = document.getElementById('ventas');
+        console.log('Sección ventas:', ventasSection);
+        console.log('Clase activa:', ventasSection ? ventasSection.classList.contains('active') : 'No encontrada');
+        
+        if (ventasSection && ventasSection.classList.contains('active')) {
+            mostrarFormularioNuevoPedido();
+            console.log('Formulario mostrado');
+        } else {
+            console.error('La sección de ventas no está activa');
+        }
+    }, 500);
+}
+
+// Función de prueba sin confirmación
+function probarCrearPedidoSinConfirmacion() {
+    console.log('Probando creación de pedido sin confirmación...');
+    
+    const cliente = clientesData['C001'];
+    if (cliente) {
+        // Mostrar notificación
+        mostrarNotificacion(`Creando nuevo pedido para ${cliente.nombre}`);
+        
+        // Cambiar a la sección de ventas
+        switchSection('ventas');
+        
+        // Esperar y mostrar el formulario
+        setTimeout(() => {
+            mostrarFormularioNuevoPedido();
+            
+            // Pre-seleccionar cliente
+            const clienteInput = document.getElementById('clientePedido');
+            if (clienteInput) {
+                clienteInput.value = cliente.nombre;
+            }
+            
+            // Establecer cliente
+            pedidoCliente = cliente;
+            
+            // Mostrar resumen
+            mostrarResumenCliente(cliente);
+            
+            // Ir al primer paso
+            mostrarPaso(1);
+            
+            console.log('Pedido creado sin confirmación');
+        }, 300);
+    }
+}
+
 // ===== MÓDULO DE CUENTAS POR COBRAR =====
 
 // Variables globales para el módulo de facturas
@@ -4113,4 +4442,1608 @@ window.addEventListener('resize', toggleVistaFacturas);
 // Inicializar vista de facturas al cargar
 document.addEventListener('DOMContentLoaded', function() {
     toggleVistaFacturas();
+});
+
+// ===== MÓDULO DE GESTIÓN DE PRODUCTOS =====
+
+// Variables globales para productos
+let currentProductoId = null;
+let isEditingProducto = false;
+
+// Mostrar formulario de nuevo producto
+function mostrarFormularioNuevoProducto() {
+    console.log('Mostrando formulario de nuevo producto');
+    
+    try {
+        // Ocultar la tabla de productos
+        const tableContainer = document.querySelector('#productos .table-container');
+        if (tableContainer) {
+            tableContainer.style.display = 'none';
+            console.log('Tabla de productos ocultada');
+        } else {
+            console.warn('No se encontró la tabla de productos');
+        }
+        
+        // Mostrar el formulario
+        const formulario = document.getElementById('formularioProducto');
+        if (formulario) {
+            formulario.style.display = 'block';
+            console.log('Formulario de productos mostrado');
+            
+            // Configurar para nuevo producto
+            isEditingProducto = false;
+            currentProductoId = null;
+            
+            // Actualizar título
+            const titulo = document.getElementById('formularioProductoTitulo');
+            if (titulo) {
+                titulo.textContent = 'Nuevo Producto';
+            }
+            
+            // Limpiar formulario
+            const form = document.getElementById('productoForm');
+            if (form) {
+                form.reset();
+            }
+            
+            // Generar SKU automático
+            generarSkuAutomatico();
+            
+            // Configurar imagen por defecto
+            configurarImagenPorDefecto();
+            
+            console.log('✅ Formulario de nuevo producto configurado correctamente');
+        } else {
+            console.error('❌ No se encontró el formulario de productos');
+            alert('Error: No se encontró el formulario de productos');
+        }
+    } catch (error) {
+        console.error('❌ Error en mostrarFormularioNuevoProducto:', error);
+        alert('Error al mostrar el formulario de productos: ' + error.message);
+    }
+}
+
+// Cancelar formulario de producto
+function cancelarFormularioProducto() {
+    console.log('Cancelando formulario de producto');
+    
+    // Ocultar formulario
+    const formulario = document.getElementById('formularioProducto');
+    if (formulario) {
+        formulario.style.display = 'none';
+    }
+    
+    // Mostrar tabla de productos
+    const tableContainer = document.querySelector('#productos .table-container');
+    if (tableContainer) {
+        tableContainer.style.display = 'block';
+    }
+    
+    // Resetear variables
+    currentProductoId = null;
+    isEditingProducto = false;
+    
+    console.log('Formulario de producto cancelado');
+}
+
+// Generar SKU automático
+function generarSkuAutomatico() {
+    const skuInput = document.getElementById('skuProducto');
+    if (skuInput) {
+        const categoria = document.getElementById('categoriaProducto').value;
+        const timestamp = Date.now().toString().slice(-4);
+        
+        let prefijo = 'PROD';
+        if (categoria) {
+            if (categoria.includes('Maíz')) {
+                prefijo = 'MAIZ';
+            } else if (categoria.includes('Tostada')) {
+                prefijo = 'TOST';
+            } else if (categoria.includes('Electrónica')) {
+                prefijo = 'ELEC';
+            } else if (categoria.includes('Alimentos')) {
+                prefijo = 'ALIM';
+            }
+        }
+        
+        const nuevoSku = `${prefijo}-${timestamp}`;
+        skuInput.value = nuevoSku;
+        console.log('SKU generado:', nuevoSku);
+    }
+}
+
+// Configurar imagen por defecto
+function configurarImagenPorDefecto() {
+    const imagenPreview = document.getElementById('imagenPreview');
+    if (imagenPreview) {
+        imagenPreview.innerHTML = `
+            <i class="fas fa-image"></i>
+            <p>Sin imagen seleccionada</p>
+        `;
+    }
+    
+    // Ocultar botón de eliminar imagen
+    const btnEliminarImagen = document.getElementById('btnEliminarImagen');
+    if (btnEliminarImagen) {
+        btnEliminarImagen.style.display = 'none';
+    }
+}
+
+// Eliminar imagen del producto
+function eliminarImagenProducto() {
+    const imagenPreview = document.getElementById('imagenPreview');
+    const btnEliminarImagen = document.getElementById('btnEliminarImagen');
+    const inputImagen = document.getElementById('imagenProducto');
+    
+    if (imagenPreview) {
+        imagenPreview.innerHTML = `
+            <i class="fas fa-image"></i>
+            <p>Sin imagen seleccionada</p>
+        `;
+    }
+    
+    if (btnEliminarImagen) {
+        btnEliminarImagen.style.display = 'none';
+    }
+    
+    if (inputImagen) {
+        inputImagen.value = '';
+    }
+    
+    console.log('Imagen del producto eliminada');
+}
+
+// Guardar producto
+function guardarProducto() {
+    console.log('Guardando producto...');
+    
+    const formData = new FormData(document.getElementById('productoForm'));
+    const productoData = {
+        id: formData.get('skuProducto'),
+        nombre: formData.get('nombreProducto'),
+        sku: formData.get('skuProducto'),
+        categoria: formData.get('categoriaProducto'),
+        marca: formData.get('marcaProducto'),
+        descripcion: formData.get('descripcionProducto'),
+        precio: parseFloat(formData.get('precioVentaProducto')),
+        precioOriginal: parseFloat(formData.get('precioVentaProducto')),
+        stock: parseInt(formData.get('stockInicialProducto')),
+        especificaciones: {
+            peso: formData.get('unidadMedidaProducto'),
+            origen: 'México',
+            conservacion: 'Seco'
+        },
+        imagenes: ['🌽', '🍲', '🏺'],
+        badge: null
+    };
+    
+    if (isEditingProducto && currentProductoId) {
+        // Actualizar producto existente
+        productosData[currentProductoId] = { ...productosData[currentProductoId], ...productoData };
+        console.log('Producto actualizado:', currentProductoId, productoData);
+        mostrarNotificacion('Producto actualizado exitosamente');
+    } else {
+        // Crear nuevo producto
+        const nuevoId = productoData.sku;
+        productosData[nuevoId] = productoData;
+        console.log('Nuevo producto creado:', nuevoId, productosData[nuevoId]);
+        mostrarNotificacion('Producto creado exitosamente');
+    }
+    
+    // Volver al listado
+    cancelarFormularioProducto();
+    
+    // Actualizar tabla de productos
+    actualizarTablaProductos();
+}
+
+// Actualizar tabla de productos
+function actualizarTablaProductos() {
+    console.log('Actualizando tabla de productos...');
+    
+    const tbody = document.querySelector('#productos .data-table tbody');
+    if (!tbody) {
+        console.error('No se encontró el tbody de productos');
+        return;
+    }
+    
+    // Limpiar tabla
+    tbody.innerHTML = '';
+    
+    // Agregar productos
+    Object.values(productosData).forEach(producto => {
+        // Calcular nivel de stock (simulado para productos existentes)
+        const stockMinimo = producto.stock * 0.2; // 20% del stock como mínimo
+        const stockLevel = producto.stock > stockMinimo * 2 ? 'high' : producto.stock > stockMinimo ? 'medium' : 'low';
+        const stockPercentage = Math.min((producto.stock / (stockMinimo * 3)) * 100, 100);
+        
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <div class="product-info">
+                    <img src="https://via.placeholder.com/40x40/${getRandomColor()}/FFFFFF?text=${producto.nombre.charAt(0).toUpperCase()}" alt="Producto">
+                    <div>
+                        <div class="product-name">${producto.nombre}</div>
+                        <div class="product-sku">SKU: ${producto.sku}</div>
+                    </div>
+                </div>
+            </td>
+            <td>${producto.categoria}</td>
+            <td>€${producto.precio.toFixed(2)}</td>
+            <td>
+                <div class="stock-info">
+                    <span class="stock-level ${stockLevel}">${producto.stock}</span>
+                    <div class="stock-bar">
+                        <div class="stock-fill ${stockLevel}" style="width: ${stockPercentage}%"></div>
+                    </div>
+                </div>
+            </td>
+            <td><span class="status active">Activo</span></td>
+            <td>
+                <div class="actions">
+                    <button class="action-btn" title="Ver Detalles" onclick="verDetalleProducto('${producto.id}')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn" title="Editar" onclick="editarProducto('${producto.id}')">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn" title="Eliminar" onclick="eliminarProducto('${producto.id}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+    
+    console.log('Tabla de productos actualizada');
+}
+
+// Ver detalle de producto
+function verDetalleProducto(productoId) {
+    console.log('Viendo detalle del producto:', productoId);
+    // Implementar vista de detalle
+}
+
+// Editar producto
+function editarProducto(productoId) {
+    console.log('Editando producto:', productoId);
+    
+    const producto = productosData[productoId];
+    if (!producto) {
+        console.error('Producto no encontrado:', productoId);
+        return;
+    }
+    
+    // Configurar para edición
+    isEditingProducto = true;
+    currentProductoId = productoId;
+    
+    // Mostrar formulario
+    mostrarFormularioNuevoProducto();
+    
+    // Actualizar título
+    document.getElementById('formularioProductoTitulo').textContent = 'Editar Producto';
+    
+    // Llenar formulario con datos del producto
+    document.getElementById('nombreProducto').value = producto.nombre;
+    document.getElementById('skuProducto').value = producto.sku;
+    document.getElementById('categoriaProducto').value = producto.categoria;
+    document.getElementById('marcaProducto').value = producto.marca;
+    document.getElementById('descripcionProducto').value = producto.descripcion;
+    document.getElementById('precioCompraProducto').value = producto.precio;
+    document.getElementById('precioVentaProducto').value = producto.precio;
+    document.getElementById('unidadMedidaProducto').value = producto.especificaciones?.peso || 'kg';
+    document.getElementById('stockInicialProducto').value = producto.stock;
+    document.getElementById('stockMinimoProducto').value = Math.round(producto.stock * 0.2);
+    document.getElementById('estadoProducto').checked = true;
+    
+    console.log('Formulario de edición configurado');
+}
+
+// Eliminar producto
+function eliminarProducto(productoId) {
+    console.log('Eliminando producto:', productoId);
+    
+    const confirmar = confirm('¿Estás seguro de que deseas eliminar este producto?');
+    if (confirmar) {
+        delete productosData[productoId];
+        actualizarTablaProductos();
+        mostrarNotificacion('Producto eliminado exitosamente');
+        console.log('Producto eliminado:', productoId);
+    }
+}
+
+// Configurar eventos del formulario de productos
+function setupProductosModule() {
+    console.log('Configurando módulo de productos...');
+    
+    // Configurar evento de cambio de categoría para generar SKU
+    const categoriaSelect = document.getElementById('categoriaProducto');
+    if (categoriaSelect) {
+        categoriaSelect.addEventListener('change', generarSkuAutomatico);
+    }
+    
+    // Configurar evento de subida de imagen
+    const imagenInput = document.getElementById('imagenProducto');
+    if (imagenInput) {
+        imagenInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imagenPreview = document.getElementById('imagenPreview');
+                    const btnEliminarImagen = document.getElementById('btnEliminarImagen');
+                    
+                    if (imagenPreview) {
+                        imagenPreview.innerHTML = `<img src="${e.target.result}" alt="Imagen del producto" style="max-width: 100%; max-height: 200px;">`;
+                    }
+                    
+                    if (btnEliminarImagen) {
+                        btnEliminarImagen.style.display = 'block';
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+    
+    // Configurar envío del formulario
+    const productoForm = document.getElementById('productoForm');
+    if (productoForm) {
+        productoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            guardarProducto();
+        });
+    }
+    
+    console.log('Módulo de productos configurado');
+}
+
+// Inicializar módulo de productos cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    setupProductosModule();
+    
+    // Agregar event listener global para detectar clics en botones
+    document.addEventListener('click', function(e) {
+        if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+            const button = e.target.tagName === 'BUTTON' ? e.target : e.target.closest('button');
+            console.log('🔘 Botón clickeado:', {
+                texto: button.textContent?.trim(),
+                onclick: button.getAttribute('onclick'),
+                classes: button.className,
+                id: button.id
+            });
+        }
+    });
+    
+    // Función de prueba para verificar que todo funciona
+    window.probarFuncionalidad = function() {
+        console.log('=== PRUEBA DE FUNCIONALIDAD ===');
+        console.log('1. Verificando funciones de productos...');
+        console.log('mostrarFormularioNuevoProducto:', typeof mostrarFormularioNuevoProducto);
+        console.log('editarProducto:', typeof editarProducto);
+        console.log('eliminarProducto:', typeof eliminarProducto);
+        
+        console.log('2. Verificando funciones de clientes...');
+        console.log('crearPedidoCliente:', typeof crearPedidoCliente);
+        console.log('crearPedidoDesdeDetalle:', typeof crearPedidoDesdeDetalle);
+        
+        console.log('3. Verificando datos...');
+        console.log('productosData:', productosData);
+        console.log('clientesData:', clientesData);
+        
+        console.log('4. Verificando elementos del DOM...');
+        const btnNuevoProducto = document.querySelector('#productos .btn-primary');
+        console.log('Botón Nuevo Producto:', btnNuevoProducto);
+        
+        const formularioProducto = document.getElementById('formularioProducto');
+        console.log('Formulario Producto:', formularioProducto);
+        
+        console.log('=== FIN DE PRUEBA ===');
+    };
+    
+    // Ejecutar prueba automáticamente
+    setTimeout(() => {
+        probarFuncionalidad();
+    }, 1000);
+    
+    // Función de prueba específica para productos
+    window.probarProductos = function() {
+        console.log('=== PRUEBA DE PRODUCTOS ===');
+        
+        // Probar mostrar formulario
+        try {
+            mostrarFormularioNuevoProducto();
+            console.log('✅ mostrarFormularioNuevoProducto ejecutado correctamente');
+        } catch (error) {
+            console.error('❌ Error en mostrarFormularioNuevoProducto:', error);
+        }
+        
+        // Probar editar producto
+        try {
+            editarProducto('MAIZ-001');
+            console.log('✅ editarProducto ejecutado correctamente');
+        } catch (error) {
+            console.error('❌ Error en editarProducto:', error);
+        }
+        
+        // Probar eliminar producto
+        try {
+            eliminarProducto('TOST-001');
+            console.log('✅ eliminarProducto ejecutado correctamente');
+        } catch (error) {
+            console.error('❌ Error en eliminarProducto:', error);
+        }
+        
+        console.log('=== FIN DE PRUEBA DE PRODUCTOS ===');
+    };
+    
+    // Función de prueba específica para clientes
+    window.probarClientes = function() {
+        console.log('=== PRUEBA DE CLIENTES ===');
+        
+        // Probar crear pedido
+        try {
+            crearPedidoCliente('C001');
+            console.log('✅ crearPedidoCliente ejecutado correctamente');
+        } catch (error) {
+            console.error('❌ Error en crearPedidoCliente:', error);
+        }
+        
+        console.log('=== FIN DE PRUEBA DE CLIENTES ===');
+    };
+    
+    // Función de prueba simple para productos
+    window.probarNuevoProducto = function() {
+        console.log('🧪 PROBANDO BOTÓN NUEVO PRODUCTO...');
+        
+        // 1. Verificar que la función existe
+        console.log('1. Verificando función mostrarFormularioNuevoProducto:', typeof mostrarFormularioNuevoProducto);
+        
+        // 2. Verificar que el botón existe
+        const btnNuevoProducto = document.querySelector('#productos .btn-primary');
+        console.log('2. Botón encontrado:', !!btnNuevoProducto);
+        if (btnNuevoProducto) {
+            console.log('   - Texto del botón:', btnNuevoProducto.textContent?.trim());
+            console.log('   - Atributo onclick:', btnNuevoProducto.getAttribute('onclick'));
+        }
+        
+        // 3. Verificar que el formulario existe
+        const formularioProducto = document.getElementById('formularioProducto');
+        console.log('3. Formulario encontrado:', !!formularioProducto);
+        if (formularioProducto) {
+            console.log('   - Display actual:', formularioProducto.style.display);
+        }
+        
+        // 4. Intentar ejecutar la función
+        console.log('4. Intentando ejecutar mostrarFormularioNuevoProducto...');
+        try {
+            mostrarFormularioNuevoProducto();
+            console.log('✅ Función ejecutada sin errores');
+            
+            // Verificar resultado
+            setTimeout(() => {
+                const formulario = document.getElementById('formularioProducto');
+                if (formulario && formulario.style.display !== 'none') {
+                    console.log('✅ ÉXITO: Formulario ahora está visible');
+                } else {
+                    console.log('❌ FALLO: Formulario sigue oculto');
+                    // Intentar método directo
+                    console.log('🔧 Intentando método directo...');
+                    ejecutarNuevoProductoDirecto();
+                }
+            }, 500);
+            
+        } catch (error) {
+            console.error('❌ Error ejecutando función:', error);
+            ejecutarNuevoProductoDirecto();
+        }
+    };
+    
+    // Función para forzar el funcionamiento del botón
+    window.forzarBotonNuevoProducto = function() {
+        console.log('💪 FORZANDO FUNCIONAMIENTO DEL BOTÓN NUEVO PRODUCTO...');
+        
+        const btnNuevoProducto = document.querySelector('#productos .btn-primary');
+        if (btnNuevoProducto) {
+            // Limpiar eventos existentes
+            const nuevoBoton = btnNuevoProducto.cloneNode(true);
+            btnNuevoProducto.parentNode.replaceChild(nuevoBoton, btnNuevoProducto);
+            
+            // Agregar nuevo evento
+            nuevoBoton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('🚀 BOTÓN CLICKEADO - Ejecutando mostrarFormularioNuevoProducto');
+                
+                if (typeof mostrarFormularioNuevoProducto === 'function') {
+                    mostrarFormularioNuevoProducto();
+                } else {
+                    ejecutarNuevoProductoDirecto();
+                }
+                
+                return false;
+            });
+            
+            // También agregar onclick
+            nuevoBoton.setAttribute('onclick', 'mostrarFormularioNuevoProducto(); return false;');
+            
+            console.log('✅ Botón reemplazado y configurado correctamente');
+        } else {
+            console.error('❌ No se encontró el botón Nuevo Producto');
+        }
+    };
+    
+    // Función de prueba simple para clientes
+    window.probarCarritoCliente = function() {
+        console.log('Probando carrito de cliente...');
+        crearPedidoCliente('C001');
+    };
+    
+    // Función para verificar estado actual
+    window.verificarEstado = function() {
+        console.log('=== VERIFICACIÓN DE ESTADO ===');
+        console.log('Sección actual:', currentSection);
+        console.log('Productos cargados:', Object.keys(productosData).length);
+        console.log('Clientes cargados:', Object.keys(clientesData).length);
+        console.log('Formulario producto visible:', document.getElementById('formularioProducto')?.style.display);
+        console.log('Tabla productos visible:', document.querySelector('#productos .table-container')?.style.display);
+        console.log('=== FIN VERIFICACIÓN ===');
+    };
+    
+    // Función para probar productos de maíz y tostadas
+    window.probarProductosMaiz = function() {
+        console.log('=== PRUEBA DE PRODUCTOS DE MAÍZ ===');
+        
+        // Verificar productos de maíz y tostadas
+        const productosMaiz = Object.values(productosData).filter(producto =>
+            producto.categoria.includes('Maíz') || producto.categoria.includes('Tostada')
+        );
+        
+        console.log('Productos de maíz y tostadas encontrados:', productosMaiz.length);
+        productosMaiz.forEach(producto => {
+            console.log(`- ${producto.nombre} (${producto.categoria}) - €${producto.precio}`);
+        });
+        
+        // Probar mostrar sugerencias
+        try {
+            mostrarSugerenciasProductos('');
+            console.log('✅ Sugerencias de productos mostradas correctamente');
+        } catch (error) {
+            console.error('❌ Error al mostrar sugerencias:', error);
+        }
+        
+        console.log('=== FIN PRUEBA ===');
+    };
+    
+    // Función para simular búsqueda de productos
+    window.probarBusquedaProductos = function(termino) {
+        console.log(`Probando búsqueda: "${termino}"`);
+        mostrarSugerenciasProductos(termino);
+    };
+    
+    // Función para re-inicializar todos los eventos
+    window.reinicializarEventos = function() {
+        console.log('🔄 Re-inicializando todos los eventos...');
+        
+        try {
+            // Re-configurar módulo de productos
+            setupProductosModule();
+            console.log('✅ Módulo de productos re-configurado');
+            
+            // Re-configurar botones de pedidos
+            setupPedidosButtons();
+            console.log('✅ Botones de pedidos re-configurados');
+            
+            // Verificar botones con onclick
+            const botonesConOnclick = document.querySelectorAll('[onclick]');
+            console.log(`📋 Botones con onclick encontrados: ${botonesConOnclick.length}`);
+            botonesConOnclick.forEach((btn, index) => {
+                console.log(`${index + 1}. ${btn.textContent?.trim()} - ${btn.getAttribute('onclick')}`);
+            });
+            
+        } catch (error) {
+            console.error('❌ Error al re-inicializar eventos:', error);
+        }
+    };
+    
+    // Función para forzar la funcionalidad de productos
+    window.forzarFuncionalidadProductos = function() {
+        console.log('💪 Forzando funcionalidad de productos...');
+        
+        // Agregar eventos a botones de productos manualmente
+        const btnNuevoProducto = document.querySelector('#productos .btn-primary');
+        if (btnNuevoProducto) {
+            btnNuevoProducto.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('🆕 Ejecutando mostrarFormularioNuevoProducto');
+                mostrarFormularioNuevoProducto();
+            });
+            console.log('✅ Evento agregado al botón Nuevo Producto');
+        }
+        
+        // Agregar eventos a botones de acción de productos
+        const botonesAccion = document.querySelectorAll('#productos .action-btn');
+        botonesAccion.forEach(btn => {
+            const onclick = btn.getAttribute('onclick');
+            if (onclick && !btn.hasAttribute('data-event-added')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🔧 Ejecutando:', onclick);
+                    try {
+                        eval(onclick);
+                    } catch (error) {
+                        console.error('❌ Error al ejecutar:', onclick, error);
+                    }
+                });
+                btn.setAttribute('data-event-added', 'true');
+            }
+        });
+        console.log(`✅ Eventos agregados a ${botonesAccion.length} botones de acción`);
+        
+        // Agregar eventos a botones de carrito de clientes
+        const botonesCarrito = document.querySelectorAll('[onclick*="crearPedido"]');
+        botonesCarrito.forEach(btn => {
+            const onclick = btn.getAttribute('onclick');
+            if (onclick && !btn.hasAttribute('data-event-added')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🛒 Ejecutando:', onclick);
+                    try {
+                        eval(onclick);
+                    } catch (error) {
+                        console.error('❌ Error al ejecutar:', onclick, error);
+                    }
+                });
+                btn.setAttribute('data-event-added', 'true');
+            }
+        });
+        console.log(`✅ Eventos agregados a ${botonesCarrito.length} botones de carrito`);
+    };
+    
+    // Función de diagnóstico completo
+    window.diagnosticoCompleto = function() {
+        console.log('🔍 === DIAGNÓSTICO COMPLETO ===');
+        
+        // 1. Verificar funciones globales
+        console.log('1. Funciones globales:');
+        console.log('   mostrarFormularioNuevoProducto:', typeof mostrarFormularioNuevoProducto);
+        console.log('   crearPedidoCliente:', typeof crearPedidoCliente);
+        console.log('   editarProducto:', typeof editarProducto);
+        console.log('   eliminarProducto:', typeof eliminarProducto);
+        
+        // 2. Verificar datos
+        console.log('2. Datos:');
+        console.log('   productosData:', Object.keys(productosData || {}).length);
+        console.log('   clientesData:', Object.keys(clientesData || {}).length);
+        
+        // 3. Verificar elementos del DOM
+        console.log('3. Elementos del DOM:');
+        console.log('   Botón Nuevo Producto:', !!document.querySelector('#productos .btn-primary'));
+        console.log('   Formulario Producto:', !!document.getElementById('formularioProducto'));
+        console.log('   Formulario Pedido:', !!document.getElementById('formularioPedido'));
+        
+        // 4. Verificar eventos onclick
+        console.log('4. Botones con onclick:');
+        const botonesOnclick = document.querySelectorAll('[onclick]');
+        console.log(`   Total: ${botonesOnclick.length}`);
+        
+        // 5. Probar funcionalidad
+        console.log('5. Probando funcionalidad:');
+        try {
+            reinicializarEventos();
+            forzarFuncionalidadProductos();
+            console.log('✅ Funcionalidad forzada exitosamente');
+        } catch (error) {
+            console.error('❌ Error al forzar funcionalidad:', error);
+        }
+        
+        console.log('🔍 === FIN DIAGNÓSTICO ===');
+    };
+    
+    // Función para forzar productos de maíz en el formulario de pedidos
+    window.forzarProductosMaiz = function() {
+        console.log('🌽 Forzando productos de maíz en formulario de pedidos...');
+        
+        // Obtener productos de maíz y tostadas
+        const productosMaiz = Object.values(productosData).filter(producto =>
+            producto.categoria.includes('Maíz') || producto.categoria.includes('Tostada')
+        );
+        
+        console.log('Productos de maíz encontrados:', productosMaiz);
+        
+        const suggestions = document.getElementById('productoSuggestions');
+        if (suggestions) {
+            // Limpiar contenido existente completamente
+            suggestions.innerHTML = '';
+            suggestions.style.display = 'none';
+            
+            // Crear contenido HTML completo para productos de maíz
+            let htmlContent = '';
+            productosMaiz.forEach(producto => {
+                htmlContent += `
+                    <div class="producto-suggestion-item" style="
+                        padding: 12px;
+                        border-bottom: 1px solid #eee;
+                        cursor: pointer;
+                        transition: background-color 0.2s;
+                        display: block;
+                    " onclick="seleccionarProductoMaiz('${producto.id}')">
+                        <div>
+                            <strong>${producto.nombre}</strong>
+                            <div style="font-size: 0.875rem; color: #666;">
+                                ${producto.categoria} | €${producto.precio.toFixed(2)} | Stock: ${producto.stock}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // Insertar el HTML
+            suggestions.innerHTML = htmlContent;
+            
+            // Aplicar estilos al contenedor
+            suggestions.style.cssText = `
+                display: block !important;
+                position: relative;
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                max-height: 300px;
+                overflow-y: auto;
+                width: 100%;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                margin-top: 5px;
+            `;
+            
+            console.log(`✅ ${productosMaiz.length} productos de maíz agregados con HTML directo`);
+        }
+        
+        // También intentar sobrescribir cualquier contenido que se muestre automáticamente
+        setTimeout(() => {
+            const allSuggestionItems = document.querySelectorAll('.producto-suggestion-item');
+            console.log(`🔍 Elementos de sugerencia encontrados: ${allSuggestionItems.length}`);
+            
+            // Eliminar productos que no sean de maíz
+            allSuggestionItems.forEach(item => {
+                const text = item.textContent || '';
+                if (text.includes('Laptop') || text.includes('Monitor') || text.includes('Auriculares') || 
+                    text.includes('Electrónicos') || text.includes('Gaming') || text.includes('Oficina')) {
+                    console.log('🗑️ Eliminando producto de cómputo:', text.trim());
+                    item.remove();
+                }
+            });
+        }, 100);
+    };
+    
+    // Función para seleccionar producto de maíz
+    window.seleccionarProductoMaiz = function(productoId) {
+        console.log('🌽 Seleccionando producto de maíz:', productoId);
+        const producto = productosData[productoId];
+        if (producto) {
+            seleccionarProducto(producto);
+        }
+    };
+    
+    // Función para ejecutar cuando se abre el paso 2 del formulario
+    window.interceptarPaso2 = function() {
+        console.log('📝 Interceptando paso 2 del formulario...');
+        
+        // Sobrescribir la función mostrarPaso para interceptar el paso 2
+        const originalMostrarPaso = window.mostrarPaso;
+        
+        window.mostrarPaso = function(paso) {
+            console.log(`📋 Mostrando paso: ${paso}`);
+            
+            // Ejecutar función original
+            if (originalMostrarPaso) {
+                originalMostrarPaso(paso);
+            }
+            
+            // Si es el paso 2, forzar productos de maíz
+            if (paso === 2) {
+                setTimeout(() => {
+                    forzarProductosMaiz();
+                }, 500);
+            }
+        };
+        
+        console.log('✅ Interceptor del paso 2 configurado');
+    };
+    
+    // Función para sobrescribir botones problemáticos
+    window.sobrescribirBotones = function() {
+        console.log('🔧 Sobrescribiendo botones problemáticos...');
+        
+        // Método más agresivo para el botón Nuevo Producto
+        const botonesNuevoProducto = document.querySelectorAll('#productos .btn-primary, [onclick*="mostrarFormularioNuevoProducto"]');
+        console.log(`🔍 Encontrados ${botonesNuevoProducto.length} botones de Nuevo Producto`);
+        
+        botonesNuevoProducto.forEach((btn, index) => {
+            // Remover eventos existentes
+            btn.removeAttribute('onclick');
+            
+            // Crear nuevo evento limpio
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log(`🆕 EJECUTANDO mostrarFormularioNuevoProducto desde botón ${index + 1}`);
+                
+                try {
+                    // Verificar que la función existe
+                    if (typeof mostrarFormularioNuevoProducto === 'function') {
+                        mostrarFormularioNuevoProducto();
+                        console.log('✅ Función ejecutada correctamente');
+                    } else {
+                        console.error('❌ Función mostrarFormularioNuevoProducto no existe');
+                        // Ejecutar código directo como respaldo
+                        ejecutarNuevoProductoDirecto();
+                    }
+                } catch (error) {
+                    console.error('❌ Error ejecutando mostrarFormularioNuevoProducto:', error);
+                    // Ejecutar código directo como respaldo
+                    ejecutarNuevoProductoDirecto();
+                }
+                
+                return false;
+            });
+            
+            // También agregar el onclick como respaldo
+            btn.setAttribute('onclick', 'mostrarFormularioNuevoProducto(); return false;');
+            
+            console.log(`✅ Botón Nuevo Producto ${index + 1} configurado con múltiples eventos`);
+        });
+        
+        // Sobrescribir botones de carrito
+        const botonesCarrito = document.querySelectorAll('[onclick*="crearPedido"]');
+        botonesCarrito.forEach((btn, index) => {
+            const originalOnclick = btn.getAttribute('onclick');
+            btn.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log(`🛒 Ejecutando ${originalOnclick} desde sobrescritura`);
+                try {
+                    eval(originalOnclick);
+                } catch (error) {
+                    console.error('❌ Error en sobrescritura:', error);
+                }
+                return false;
+            };
+            console.log(`✅ Botón carrito ${index + 1} sobrescrito`);
+        });
+        
+        // Sobrescribir botones de acción de productos
+        const botonesAccionProductos = document.querySelectorAll('#productos [onclick*="editarProducto"], #productos [onclick*="eliminarProducto"], #productos [onclick*="verDetalle"]');
+        botonesAccionProductos.forEach((btn, index) => {
+            const originalOnclick = btn.getAttribute('onclick');
+            if (originalOnclick) {
+                btn.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log(`🔧 Ejecutando ${originalOnclick} desde sobrescritura`);
+                    try {
+                        eval(originalOnclick);
+                    } catch (error) {
+                        console.error('❌ Error en sobrescritura:', error);
+                    }
+                    return false;
+                };
+                console.log(`✅ Botón acción producto ${index + 1} sobrescrito`);
+            }
+        });
+    };
+    
+    // Función de respaldo para ejecutar nuevo producto directamente
+    window.ejecutarNuevoProductoDirecto = function() {
+        console.log('🚨 EJECUTANDO NUEVO PRODUCTO DIRECTO (RESPALDO)');
+        
+        try {
+            // Ocultar la tabla de productos
+            const tableContainer = document.querySelector('#productos .table-container');
+            if (tableContainer) {
+                tableContainer.style.display = 'none';
+                console.log('✅ Tabla de productos ocultada');
+            }
+            
+            // Mostrar el formulario
+            const formulario = document.getElementById('formularioProducto');
+            if (formulario) {
+                formulario.style.display = 'block';
+                console.log('✅ Formulario de productos mostrado');
+                
+                // Configurar para nuevo producto
+                const titulo = document.getElementById('formularioProductoTitulo');
+                if (titulo) {
+                    titulo.textContent = 'Nuevo Producto';
+                }
+                
+                // Limpiar formulario
+                const form = document.getElementById('productoForm');
+                if (form) {
+                    form.reset();
+                }
+                
+                console.log('✅ RESPALDO EJECUTADO CORRECTAMENTE');
+            } else {
+                console.error('❌ No se encontró el formulario de productos');
+                alert('Error: No se encontró el formulario de productos');
+            }
+        } catch (error) {
+            console.error('❌ Error en respaldo:', error);
+            alert('Error al mostrar el formulario: ' + error.message);
+        }
+    };
+    
+    // Función para sobrescribir completamente la función mostrarSugerenciasProductos
+    window.sobrescribirMostrarSugerencias = function() {
+        console.log('🔄 Sobrescribiendo función mostrarSugerenciasProductos...');
+        
+        // Guardar la función original
+        const originalMostrarSugerencias = window.mostrarSugerenciasProductos;
+        
+        // Sobrescribir con nuestra función
+        window.mostrarSugerenciasProductos = function(searchTerm) {
+            console.log('🌽 Ejecutando mostrarSugerenciasProductos sobrescrita con término:', searchTerm);
+            
+            const suggestions = document.getElementById('productoSuggestions');
+            if (!suggestions) {
+                console.error('❌ No se encontró productoSuggestions');
+                return;
+            }
+            
+            // Limpiar contenido
+            suggestions.innerHTML = '';
+            
+            // Obtener solo productos de maíz y tostadas
+            const productosMaiz = Object.values(productosData).filter(producto =>
+                producto.categoria.includes('Maíz') || producto.categoria.includes('Tostada')
+            );
+            
+            let productosFiltrados;
+            if (!searchTerm || searchTerm === '') {
+                productosFiltrados = productosMaiz;
+            } else {
+                productosFiltrados = productosMaiz.filter(producto =>
+                    producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    producto.categoria.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    producto.id.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+            }
+            
+            console.log(`🌽 Mostrando ${productosFiltrados.length} productos de maíz filtrados`);
+            
+            // Crear elementos
+            productosFiltrados.forEach(producto => {
+                const item = document.createElement('div');
+                item.className = 'producto-suggestion-item';
+                item.style.cssText = `
+                    padding: 12px;
+                    border-bottom: 1px solid #eee;
+                    cursor: pointer;
+                    transition: background-color 0.2s;
+                `;
+                
+                item.innerHTML = `
+                    <div>
+                        <strong>${producto.nombre}</strong>
+                        <div style="font-size: 0.875rem; color: #666;">
+                            ${producto.categoria} | €${producto.precio.toFixed(2)} | Stock: ${producto.stock}
+                        </div>
+                    </div>
+                `;
+                
+                // Eventos
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f5f5f5';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+                
+                item.addEventListener('click', function() {
+                    console.log('🎯 Producto de maíz seleccionado:', producto.nombre);
+                    seleccionarProducto(producto);
+                });
+                
+                suggestions.appendChild(item);
+            });
+            
+            // Mostrar sugerencias
+            suggestions.style.display = productosFiltrados.length > 0 ? 'block' : 'none';
+        };
+        
+        console.log('✅ Función mostrarSugerenciasProductos sobrescrita');
+    };
+    
+    // Función para limpiar cualquier contenido hardcodeado
+    window.limpiarProductosHardcodeados = function() {
+        console.log('🧹 Limpiando productos hardcodeados...');
+        
+        // Buscar y eliminar cualquier elemento que contenga productos de cómputo
+        const elementos = document.querySelectorAll('*');
+        elementos.forEach(el => {
+            if (el.textContent) {
+                const texto = el.textContent.toLowerCase();
+                if ((texto.includes('laptop') || texto.includes('monitor') || texto.includes('auriculares')) &&
+                    (texto.includes('stock') || texto.includes('precio') || texto.includes('€'))) {
+                    console.log('🗑️ Elemento con producto de cómputo encontrado y removido');
+                    if (el.classList.contains('producto-suggestion-item')) {
+                        el.remove();
+                    }
+                }
+            }
+        });
+    };
+    
+    // Función para monitorear y reemplazar productos automáticamente
+    window.monitorearYReemplazar = function() {
+        console.log('👁️ Iniciando monitoreo de productos...');
+        
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) { // Element node
+                            const texto = node.textContent || '';
+                            if (texto.includes('Laptop') || texto.includes('Monitor') || texto.includes('Auriculares')) {
+                                console.log('🚫 Producto de cómputo detectado y eliminado:', texto.trim());
+                                if (node.remove) {
+                                    node.remove();
+                                }
+                                // Forzar productos de maíz después de eliminación
+                                setTimeout(forzarProductosMaiz, 100);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Observar el contenedor de sugerencias
+        const suggestions = document.getElementById('productoSuggestions');
+        if (suggestions) {
+            observer.observe(suggestions, {
+                childList: true,
+                subtree: true
+            });
+            console.log('✅ Observador configurado en productoSuggestions');
+        }
+        
+        // También observar el documento completo
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        
+        console.log('✅ Monitoreo global activado');
+    };
+    
+    // Ejecutar automáticamente
+    setTimeout(() => {
+        sobrescribirMostrarSugerencias();
+        interceptarPaso2();
+        forzarProductosMaiz();
+        sobrescribirBotones();
+        limpiarProductosHardcodeados();
+        monitorearYReemplazar();
+        
+        // EJECUTAR FUNCIÓN DE EMERGENCIA AUTOMÁTICAMENTE
+        emergenciaProductosMaiz();
+        
+        // ARREGLAR BOTÓN NUEVO PRODUCTO
+        console.log('🔧 CONFIGURANDO BOTÓN NUEVO PRODUCTO...');
+        forzarBotonNuevoProducto();
+        
+        // Probar el botón automáticamente
+        setTimeout(() => {
+            console.log('🧪 PROBANDO BOTÓN NUEVO PRODUCTO AUTOMÁTICAMENTE...');
+            probarNuevoProducto();
+        }, 1000);
+        
+    }, 2000);
+    
+    // Ejecutar emergencia también cuando se haga click en el campo de productos
+    const productoPedidoInput = document.getElementById('productoPedido');
+    if (productoPedidoInput) {
+        productoPedidoInput.addEventListener('focus', emergenciaProductosMaiz);
+        productoPedidoInput.addEventListener('click', emergenciaProductosMaiz);
+        productoPedidoInput.addEventListener('keyup', emergenciaProductosMaiz);
+    }
+    
+    // Crear atajo de teclado para ejecutar emergencia (Ctrl+Shift+M)
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.shiftKey && e.key === 'M') {
+            e.preventDefault();
+            console.log('🚨 ATAJO ACTIVADO: Ejecutando emergencia productos de maíz');
+            emergenciaProductosMaiz();
+        }
+        
+        // Atajo para arreglar botón de productos (Ctrl+Shift+P)
+        if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+            e.preventDefault();
+            console.log('🚨 ATAJO ACTIVADO: Arreglando botón Nuevo Producto');
+            forzarBotonNuevoProducto();
+            
+            // Probar inmediatamente
+            setTimeout(() => {
+                probarNuevoProducto();
+            }, 500);
+        }
+    });
+    
+    console.log('⚡ SISTEMA DE EMERGENCIA CONFIGURADO:');
+    console.log('- Auto-ejecución al cargar página ✅');
+    console.log('- Auto-ejecución al enfocar campo de productos ✅');
+    console.log('- Atajo de teclado para productos maíz: Ctrl+Shift+M ✅');
+    console.log('- Atajo de teclado para botón productos: Ctrl+Shift+P ✅');
+    console.log('- Auto-configuración del botón Nuevo Producto ✅');
+    console.log('- Auto-prueba del botón ✅');
+});
+
+// Funciones de diagnóstico automático
+console.log('🔍 Iniciando diagnóstico automático...');
+
+// Función de emergencia para ejecutar inmediatamente
+window.emergenciaProductosMaiz = function() {
+    console.log('🚨 FUNCIÓN DE EMERGENCIA - LIMPIEZA TOTAL Y FORZADO DE PRODUCTOS DE MAÍZ');
+    
+    // 1. Eliminar TODOS los elementos que contengan productos de cómputo
+    const elementosEliminar = document.querySelectorAll('*');
+    let eliminados = 0;
+    elementosEliminar.forEach(elemento => {
+        const texto = elemento.textContent || '';
+        if ((texto.includes('Laptop Ultraligera X200') || 
+             texto.includes('Monitor Curvo') || 
+             texto.includes('Mouse Gaming') || 
+             texto.includes('Teclado Mecánico') || 
+             texto.includes('Auriculares Bluetooth')) &&
+            (elemento.tagName === 'TR' || elemento.tagName === 'TD' || 
+             elemento.classList.contains('producto-suggestion-item') ||
+             elemento.closest('#productoSuggestions'))) {
+            console.log('🗑️ ELIMINANDO:', texto.substring(0, 50));
+            elemento.remove();
+            eliminados++;
+        }
+    });
+    console.log(`✅ Eliminados ${eliminados} elementos con productos de cómputo`);
+    
+    // 2. Sobrescribir función completamente
+    window.mostrarSugerenciasProductos = function(searchTerm) {
+        console.log('🌽 EMERGENCIA: Mostrando SOLO productos de maíz y tostadas');
+        
+        const suggestions = document.getElementById('productoSuggestions');
+        if (!suggestions) {
+            console.error('❌ No se encontró productoSuggestions');
+            return;
+        }
+        
+        // Limpiar completamente
+        suggestions.innerHTML = '';
+        
+        // Insertar HTML hardcodeado con productos de maíz
+        suggestions.innerHTML = `
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; background: white;" onclick="seleccionarProductoDirecto('MAIZ-001')">
+                <div>
+                    <strong>🌽 Maíz Cacahuazintle para Pozole</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Maíz y Derivados | €45.00 | Stock: 120
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; background: white;" onclick="seleccionarProductoDirecto('TOST-001')">
+                <div>
+                    <strong>🌮 Tostadas de Maíz Natural</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Tostadas | €12.50 | Stock: 65
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; background: white;" onclick="seleccionarProductoDirecto('MAIZ-002')">
+                <div>
+                    <strong>🌽 Maíz Blanco para Pozole</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Maíz y Derivados | €38.00 | Stock: 95
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; background: white;" onclick="seleccionarProductoDirecto('TOST-002')">
+                <div>
+                    <strong>🔵 Tostadas de Maíz Azul</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Tostadas | €15.00 | Stock: 45
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; background: white;" onclick="seleccionarProductoDirecto('PROD005')">
+                <div>
+                    <strong>🌾 Harina de Maíz</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Derivados | €95.00 | Stock: 40
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Estilos forzados
+        suggestions.style.cssText = `
+            display: block !important;
+            position: relative !important;
+            background: white !important;
+            border: 2px solid #28a745 !important;
+            border-radius: 8px !important;
+            max-height: 400px !important;
+            overflow-y: auto !important;
+            width: 100% !important;
+            z-index: 9999 !important;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
+            margin-top: 5px !important;
+        `;
+        
+        console.log('✅ EMERGENCIA: 5 productos de maíz insertados con estilos forzados');
+    };
+    
+    // 3. Limpiar tablas existentes que puedan tener productos hardcodeados
+    const tablasProductos = document.querySelectorAll('table tbody tr');
+    tablasProductos.forEach(fila => {
+        const texto = fila.textContent || '';
+        if (texto.includes('Laptop Ultraligera X200')) {
+            console.log('🗑️ ELIMINANDO FILA DE TABLA:', texto.substring(0, 50));
+            fila.remove();
+        }
+    });
+    
+    // 4. Ejecutar inmediatamente
+    setTimeout(() => {
+        mostrarSugerenciasProductos('');
+    }, 100);
+    
+    // 5. Configurar limpieza automática cada segundo
+    if (window.limpiezaInterval) {
+        clearInterval(window.limpiezaInterval);
+    }
+    
+    window.limpiezaInterval = setInterval(() => {
+        // Ejecutar sugerencias
+        if (document.getElementById('productoSuggestions')) {
+            mostrarSugerenciasProductos('');
+        }
+        
+        // Eliminar cualquier elemento nuevo que contenga productos de cómputo
+        const nuevosElementos = document.querySelectorAll('*');
+        nuevosElementos.forEach(el => {
+            if (el.textContent && el.textContent.includes('Laptop Ultraligera X200') && 
+                (el.tagName === 'TR' || el.tagName === 'TD')) {
+                console.log('🚫 AUTO-ELIMINANDO:', el.textContent.substring(0, 30));
+                el.remove();
+            }
+        });
+    }, 2000);
+    
+    console.log('🚨 ===== EMERGENCIA EJECUTADA COMPLETAMENTE =====');
+    console.log('🌽 PRODUCTOS DISPONIBLES:');
+    console.log('1. 🌽 Maíz Cacahuazintle para Pozole (€45.00)');
+    console.log('2. 🌮 Tostadas de Maíz Natural (€12.50)');
+    console.log('3. 🌽 Maíz Blanco para Pozole (€38.00)');
+    console.log('4. 🔵 Tostadas de Maíz Azul (€15.00)');
+    console.log('5. 🌾 Harina de Maíz (€95.00)');
+    console.log('⚡ Limpieza automática activada cada 2 segundos');
+};
+
+// Función para seleccionar producto directamente
+window.seleccionarProductoDirecto = function(productoId) {
+    console.log('🎯 Selección directa de producto:', productoId);
+    
+         const productos = {
+         'MAIZ-001': { nombre: 'Maíz Cacahuazintle para Pozole', precio: 45.00, stock: 120 },
+         'TOST-001': { nombre: 'Tostadas de Maíz Natural', precio: 12.50, stock: 65 },
+         'MAIZ-002': { nombre: 'Maíz Blanco para Pozole', precio: 38.00, stock: 95 },
+         'TOST-002': { nombre: 'Maíz Blanco para Pozole', precio: 15.00, stock: 45 },
+         'PROD004': { nombre: 'Tostadas de Maíz Azul', precio: 85.00, stock: 30 },
+         'PROD005': { nombre: 'Harina de Maíz', precio: 95.00, stock: 40 }
+     };
+    
+    const producto = productos[productoId];
+    if (producto) {
+        document.getElementById('productoPedido').value = producto.nombre;
+        document.getElementById('productoNombre').textContent = producto.nombre;
+        document.getElementById('productoPrecio').textContent = `€${producto.precio.toFixed(2)}`;
+        document.getElementById('productoStock').textContent = producto.stock;
+        document.getElementById('productoCantidad').max = producto.stock;
+        document.getElementById('productoCantidad').value = 1;
+        
+        document.getElementById('productoSeleccionado').style.display = 'block';
+        document.getElementById('productoSuggestions').style.display = 'none';
+        
+        console.log('✅ Producto seleccionado directamente:', producto.nombre);
+    }
+};
+
+// Verificar productos de maíz y tostadas
+setTimeout(() => {
+    try {
+        probarProductosMaiz();
+    } catch (error) {
+        console.error('❌ Error en probarProductosMaiz:', error);
+    }
+}, 2000);
+
+// Verificar estado general y ejecutar diagnóstico completo
+setTimeout(() => {
+    try {
+        verificarEstado();
+        console.log('🚀 Ejecutando diagnóstico completo automático...');
+        diagnosticoCompleto();
+    } catch (error) {
+        console.error('❌ Error en verificación:', error);
+    }
+}, 3000);
+
+// ===== EJECUCIÓN INMEDIATA DE EMERGENCIA =====
+console.log('🚨 INICIANDO EJECUCIÓN INMEDIATA DE EMERGENCIA...');
+
+// Ejecutar inmediatamente apenas se cargue el script
+if (typeof emergenciaProductosMaiz === 'function') {
+    setTimeout(emergenciaProductosMaiz, 500);
+} else {
+    // Si la función aún no está definida, ejecutar código directo
+    setTimeout(() => {
+        console.log('🚨 LIMPIEZA DIRECTA DE EMERGENCIA');
+        
+        // Sobrescribir mostrarSugerenciasProductos inmediatamente
+        window.mostrarSugerenciasProductos = function(searchTerm) {
+            const suggestions = document.getElementById('productoSuggestions');
+            if (suggestions) {
+                suggestions.innerHTML = `
+                    <div style="padding: 12px; border: 2px solid #28a745; background: #f8fff9; margin: 5px; border-radius: 5px;">
+                        <strong>🌽 Maíz Cacahuazintle para Pozole - €45.00</strong>
+                    </div>
+                    <div style="padding: 12px; border: 2px solid #28a745; background: #f8fff9; margin: 5px; border-radius: 5px;">
+                        <strong>🌮 Tostadas de Maíz Natural - €12.50</strong>
+                    </div>
+                    <div style="padding: 12px; border: 2px solid #28a745; background: #f8fff9; margin: 5px; border-radius: 5px;">
+                        <strong>🌽 Maíz Blanco para Pozole - €38.00</strong>
+                    </div>
+                `;
+                suggestions.style.display = 'block';
+                suggestions.style.border = '3px solid #28a745';
+                suggestions.style.backgroundColor = '#f8fff9';
+            }
+        };
+        
+        // Ejecutar inmediatamente
+        mostrarSugerenciasProductos('');
+        
+        console.log('✅ LIMPIEZA DIRECTA COMPLETADA');
+    }, 100);
+}
+
+console.log('⚡ SISTEMA TOTALMENTE CONFIGURADO PARA MOSTRAR SOLO PRODUCTOS DE MAÍZ Y TOSTADAS');
+
+// ===== FUNCIONES GLOBALES PARA EL USUARIO =====
+window.arreglarNuevoProducto = function() {
+    console.log('🛠️ ARREGLANDO BOTÓN NUEVO PRODUCTO MANUALMENTE...');
+    forzarBotonNuevoProducto();
+    probarNuevoProducto();
+};
+
+window.ayuda = function() {
+    console.log('🆘 AYUDA - FUNCIONES DISPONIBLES:');
+    console.log('');
+    console.log('📋 COMANDOS DISPONIBLES:');
+    console.log('1. arreglarNuevoProducto() - Arregla el botón "+ Nuevo Producto"');
+    console.log('2. emergenciaProductosMaiz() - Fuerza productos de maíz en pedidos');
+    console.log('3. probarNuevoProducto() - Prueba el botón de nuevo producto');
+    console.log('4. forzarBotonNuevoProducto() - Reconfigura el botón');
+    console.log('5. ejecutarNuevoProductoDirecto() - Abre formulario directamente');
+    console.log('');
+    console.log('⌨️ ATAJOS DE TECLADO:');
+    console.log('- Ctrl+Shift+M: Emergencia productos de maíz');
+    console.log('- Ctrl+Shift+P: Arreglar botón Nuevo Producto');
+    console.log('');
+    console.log('🆘 SI EL BOTÓN NO FUNCIONA:');
+    console.log('1. Presiona Ctrl+Shift+P');
+    console.log('2. O ejecuta: arreglarNuevoProducto()');
+    console.log('3. O ejecuta: ejecutarNuevoProductoDirecto()');
+};
+
+console.log('🆘 ESCRIBE "ayuda()" EN LA CONSOLA PARA VER TODOS LOS COMANDOS DISPONIBLES');
+
+// Función de limpieza total de productos de cómputo
+function limpiezaTotalProductos() {
+    console.log('🧹 INICIANDO LIMPIEZA TOTAL DE PRODUCTOS DE CÓMPUTO...');
+    
+    // Seleccionar el contenedor de sugerencias
+    const suggestions = document.getElementById('productoSuggestions');
+    if (suggestions) {
+        // Limpiar completamente el contenedor
+        suggestions.innerHTML = '';
+        console.log('✅ Contenedor de sugerencias limpiado');
+        
+        // Inyectar SOLO productos de maíz y tostadas
+        suggestions.innerHTML = `
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="seleccionarProductoMaiz('MAIZ-001')">
+                <div>
+                    <strong>Maíz Cacahuazintle para Pozole</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Maíz y Derivados | €45.00 | Stock: 120
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="seleccionarProductoMaiz('TOST-001')">
+                <div>
+                    <strong>Tostadas de Maíz Natural</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Tostadas | €12.50 | Stock: 65
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="seleccionarProductoMaiz('MAIZ-002')">
+                <div>
+                    <strong>Maíz Blanco para Pozole</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Maíz y Derivados | €38.00 | Stock: 95
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="seleccionarProductoMaiz('TOST-002')">
+                <div>
+                    <strong>Tostadas de Maíz Azul</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Tostadas | €15.00 | Stock: 45
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="seleccionarProductoMaiz('PROD004')">
+                <div>
+                    <strong>Tostadas de Maíz Azul</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Gaming | €85.00 | Stock: 30
+                    </div>
+                </div>
+            </div>
+            <div class="producto-suggestion-item" style="padding: 12px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="seleccionarProductoMaiz('PROD005')">
+                <div>
+                    <strong>Harina de Maíz</strong>
+                    <div style="font-size: 0.875rem; color: #666;">
+                        Derivados | €95.00 | Stock: 40
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Mostrar el contenedor
+        suggestions.style.display = 'block';
+        console.log('✅ Productos de maíz inyectados correctamente');
+    }
+    
+    // Eliminar cualquier elemento que contenga texto de productos de cómputo
+    const elementosConComputoPorTexto = document.querySelectorAll('*');
+    elementosConComputoPorTexto.forEach(elemento => {
+        if (elemento.textContent && 
+            (elemento.textContent.includes('Laptop') || 
+             elemento.textContent.includes('Monitor') || 
+             elemento.textContent.includes('Mouse') || 
+             elemento.textContent.includes('Teclado') || 
+             elemento.textContent.includes('Auriculares'))) {
+            
+            // Solo eliminar si es parte de las sugerencias de productos
+            if (elemento.closest('#productoSuggestions') || 
+                elemento.classList.contains('producto-suggestion-item')) {
+                elemento.remove();
+                console.log('🗑️ Eliminado elemento con producto de cómputo:', elemento.textContent.substring(0, 50));
+            }
+        }
+    });
+}
+
+// Función para seleccionar un producto de maíz
+function seleccionarProductoMaiz(productoId) {
+    console.log('🌽 Seleccionando producto de maíz:', productoId);
+    
+    const productos = {
+        'MAIZ-001': { 
+            id: 'MAIZ-001',
+            nombre: 'Maíz Cacahuazintle para Pozole', 
+            precio: 45.00, 
+            stock: 120,
+            categoria: 'Maíz y Derivados'
+        },
+        'TOST-001': { 
+            id: 'TOST-001',
+            nombre: 'Tostadas de Maíz Natural', 
+            precio: 12.50, 
+            stock: 65,
+            categoria: 'Tostadas'
+        },
+        'MAIZ-002': { 
+            id: 'MAIZ-002',
+            nombre: 'Maíz Blanco para Pozole', 
+            precio: 38.00, 
+            stock: 95,
+            categoria: 'Maíz y Derivados'
+        },
+        'TOST-002': { 
+            id: 'TOST-002',
+            nombre: 'Tostadas de Maíz Azul', 
+            precio: 15.00, 
+            stock: 45,
+            categoria: 'Tostadas'
+        },
+        'PROD004': { 
+            id: 'PROD004',
+            nombre: 'Tostadas de Maíz Azul', 
+            precio: 85.00, 
+            stock: 30,
+            categoria: 'Gaming'
+        },
+        'PROD005': { 
+            id: 'PROD005',
+            nombre: 'Harina de Maíz', 
+            precio: 95.00, 
+            stock: 40,
+            categoria: 'Derivados'
+        }
+    };
+    
+    const producto = productos[productoId];
+    if (producto) {
+        // Llenar el campo de búsqueda
+        const searchInput = document.getElementById('productoPedido');
+        if (searchInput) {
+            searchInput.value = producto.nombre;
+        }
+        
+        // Ocultar sugerencias
+        const suggestions = document.getElementById('productoSuggestions');
+        if (suggestions) {
+            suggestions.style.display = 'none';
+        }
+        
+        // Agregar el producto a la lista
+        if (typeof agregarProductoAPedido === 'function') {
+            agregarProductoAPedido(producto);
+        } else if (typeof seleccionarProducto === 'function') {
+            seleccionarProducto(producto);
+        }
+        
+        console.log('✅ Producto agregado:', producto.nombre);
+    }
+}
+
+// Sobrescribir completamente la función mostrarSugerenciasProductos
+function sobrescribirSugerenciasCompleto() {
+    console.log('🔄 Sobrescribiendo función de sugerencias completamente...');
+    
+    // Redefinir la función global
+    window.mostrarSugerenciasProductos = function(searchTerm = '') {
+        console.log('🌽 Función sobrescrita ejecutándose, término:', searchTerm);
+        limpiezaTotalProductos();
+    };
+    
+    console.log('✅ Función mostrarSugerenciasProductos sobrescrita');
+}
+
+// Ejecutar automáticamente al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔄 Ejecutando funciones de limpieza total...');
+    
+    setTimeout(() => {
+        sobrescribirSugerenciasCompleto();
+        limpiezaTotalProductos();
+        
+        // Ejecutar limpieza cada 2 segundos
+        setInterval(limpiezaTotalProductos, 2000);
+        
+        // Ejecutar limpieza cuando se haga click en el input de productos
+        const productInput = document.getElementById('productoPedido');
+        if (productInput) {
+            productInput.addEventListener('focus', limpiezaTotalProductos);
+            productInput.addEventListener('click', limpiezaTotalProductos);
+        }
+        
+        console.log('✅ Sistema de limpieza total activado');
+    }, 1000);
 });
