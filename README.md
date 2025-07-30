@@ -1,6 +1,12 @@
-# Trigal CRM - Sistema de Gestión de Clientes
+# 🌽 CRM Trigal - Sistema de Gestión Integral
 
-Una maqueta inicial de frontend para un sistema CRM moderno y responsivo, diseñado para equipos de ventas con funcionalidades completas de gestión de clientes, ventas, productos e informes.
+**Sistema CRM especializado para la gestión de productos de maíz y derivados**
+
+## 🚀 Versión Actual: v2.0.0-avanzado
+
+Sistema CRM completo y robusto diseñado específicamente para empresas del sector de maíz y derivados, con funcionalidades avanzadas de auto-reparación y gestión inteligente.
+
+> **📖 Importante**: Ver `VERSION_GUIDE.md` para guía completa de versiones y comandos de cambio entre v1.0.0 (básica) y v2.0.0 (avanzada).
 
 ## 🚀 Características Principales
 
@@ -12,8 +18,9 @@ Una maqueta inicial de frontend para un sistema CRM moderno y responsivo, diseñ
 
 ### 👥 Gestión de Clientes
 - Lista completa de clientes con búsqueda y filtros
+- **Creación de pedidos directa** desde icono de carrito 🛒
 - Información detallada: empresa, contacto, región, estado
-- Acciones rápidas: ver, editar, eliminar
+- Acciones rápidas: ver, editar, eliminar, crear pedido
 - Interfaz optimizada para móvil
 
 ### 💰 Gestión de Ventas
@@ -22,11 +29,12 @@ Una maqueta inicial de frontend para un sistema CRM moderno y responsivo, diseñ
 - Integración de pagos con Stripe y TPV Clip
 - Modal de procesamiento de pagos
 
-### 📦 Gestión de Productos
-- Catálogo completo con niveles de stock
-- Indicadores visuales de inventario
-- Información detallada de productos
-- Gestión de categorías y precios
+### 📦 Gestión de Productos (Especializado en Maíz)
+- **Catálogo especializado**: Maíz Cacahuazintle, Tostadas, Harina de Maíz
+- **Formulario completo** para agregar nuevos productos
+- **Indicadores visuales** de inventario y stock
+- **Sistema inteligente** de sugerencias en pedidos
+- **Auto-limpieza** de productos no relacionados
 
 ### 📈 Sistema de Informes
 - **9 tipos de informes**:
@@ -74,10 +82,30 @@ Una maqueta inicial de frontend para un sistema CRM moderno y responsivo, diseñ
 
 - **HTML5**: Estructura semántica y accesible
 - **CSS3**: Variables CSS, Grid, Flexbox, Animaciones
-- **JavaScript ES6+**: Funcionalidad interactiva
+- **JavaScript ES6+**: Funcionalidad interactiva + Sistema de auto-reparación
 - **Chart.js**: Gráficos interactivos
 - **Font Awesome**: Iconografía
 - **Responsive Design**: Mobile-first approach
+
+## 🌽 Funcionalidades Especializadas (v2.0.0)
+
+### Sistema de Emergencia y Auto-reparación
+- **Función de emergencia**: `emergenciaProductosMaiz()` para forzar productos correctos
+- **Auto-diagnóstico**: Detecta y repara automáticamente funcionalidades rotas
+- **Limpieza automática**: Elimina productos no deseados cada 2 segundos
+- **Múltiples respaldos**: Sistema robusto con varios métodos de recuperación
+
+### Atajos de Teclado Avanzados
+- `Ctrl+Shift+M`: Emergencia productos de maíz
+- `Ctrl+Shift+P`: Arreglar botón Nuevo Producto
+- `F12` → `ayuda()`: Mostrar ayuda completa
+
+### Productos Especializados
+1. **Maíz Cacahuazintle para Pozole** - €45.00
+2. **Tostadas de Maíz Natural** - €12.50
+3. **Maíz Blanco para Pozole** - €38.00
+4. **Tostadas de Maíz Azul** - €15.00
+5. **Harina de Maíz** - €95.00
 
 ## 📱 Funcionalidades Móviles
 
@@ -148,10 +176,30 @@ Trigal/
 
 ## 🚀 Instalación y Uso
 
-1. **Clonar o descargar** los archivos del proyecto
-2. **Abrir `index.html`** en un navegador web moderno
-3. **Explorar las diferentes secciones** usando la navegación
-4. **Probar la responsividad** redimensionando la ventana
+### Instalación Básica
+1. **Clonar** el repositorio: `git clone [tu-repositorio]`
+2. **Navegar**: `cd Trigal`
+3. **Abrir**: `index.html` en un navegador web moderno
+
+### Cambiar Entre Versiones
+```bash
+# Usar versión avanzada (actual)
+git checkout main
+
+# Cambiar a versión básica
+git checkout -b version-basica HEAD~1
+
+# Ver todas las versiones
+git tag && git branch -a
+```
+
+### Solución de Problemas (v2.0.0)
+Si algo no funciona, en la consola del navegador (F12):
+```javascript
+ayuda()                    // Ver comandos disponibles
+arreglarNuevoProducto()    // Arreglar botón productos
+emergenciaProductosMaiz()  // Forzar productos de maíz
+```
 
 ### Requisitos del Navegador
 - Chrome 80+
