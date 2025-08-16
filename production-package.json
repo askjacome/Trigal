@@ -1,0 +1,95 @@
+{
+  "name": "trigal-crm-production",
+  "version": "1.2.0",
+  "description": "Sistema CRM Trigal v1.2.0 - Versión de Producción",
+  "main": "production-server.js",
+  "scripts": {
+    "start": "node production-server.js",
+    "dev": "nodemon production-server.js",
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "npm run lint && npm test",
+    "migrate": "node scripts/migrate-database.js",
+    "seed": "node scripts/seed-production.js",
+    "backup": "node scripts/backup-database.js",
+    "logs": "tail -f logs/combined.log",
+    "health": "curl -s http://localhost:8080/api/health",
+    "restart": "pm2 restart trigal-crm-production",
+    "stop": "pm2 stop trigal-crm-production",
+    "deploy": "npm run build && pm2 start ecosystem.production.js"
+  },
+  "keywords": [
+    "crm",
+    "ventas",
+    "maiz",
+    "agricola",
+    "production",
+    "azure",
+    "nodejs",
+    "express"
+  ],
+  "author": "Enrique Jacome <evjacome@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "express-rate-limit": "^7.1.5",
+    "morgan": "^1.10.0",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "mssql": "^10.0.1",
+    "tedious": "^16.6.1",
+    "sequelize": "^6.35.1",
+    "nodemailer": "^6.9.7",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.6",
+    "pdf2pic": "^3.1.1",
+    "uuid": "^9.0.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
+    "validator": "^13.11.0",
+    "express-validator": "^7.0.1",
+    "redis": "^4.6.10",
+    "bull": "^4.12.2",
+    "cron": "^3.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.54.0",
+    "eslint-config-node": "^4.1.0",
+    "pm2": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/askjacome/Trigal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/askjacome/Trigal/issues"
+  },
+  "homepage": "https://github.com/askjacome/Trigal#readme",
+  "pm2": {
+    "name": "trigal-crm-production",
+    "script": "production-server.js",
+    "instances": "max",
+    "exec_mode": "cluster",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": 8080
+    },
+    "log_type": "json",
+    "merge_logs": true,
+    "time": true
+  }
+}
