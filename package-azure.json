@@ -1,0 +1,47 @@
+{
+  "name": "trigal-crm-azure",
+  "version": "1.0.0",
+  "description": "Backend API para CRM Trigal en Microsoft Azure con SQL Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate": "sequelize-cli db:migrate",
+    "seed": "sequelize-cli db:seed:all",
+    "test": "jest",
+    "azure:build": "npm install --production",
+    "azure:deploy": "npm run azure:build"
+  },
+  "keywords": ["crm", "trigal", "maiz", "ventas", "api", "azure", "sqlserver"],
+  "author": "Enrique Jacome",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mssql": "^10.0.1",
+    "sequelize": "^6.35.2",
+    "tedious": "^16.7.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "joi": "^17.11.0",
+    "multer": "^1.4.5-lts.1",
+    "express-rate-limit": "^7.1.5",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "@azure/storage-blob": "^12.17.0",
+    "@azure/keyvault-secrets": "^4.7.0",
+    "@azure/identity": "^4.0.1",
+    "applicationinsights": "^2.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "sequelize-cli": "^6.6.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

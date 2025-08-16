@@ -1,0 +1,15 @@
+{
+  "name": "trigal-crm-azure-simple",
+  "version": "1.0.0",
+  "description": "CRM Trigal para Azure - Versión Simple",
+  "main": "server-simple.js",
+  "scripts": {
+    "start": "node server-simple.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
